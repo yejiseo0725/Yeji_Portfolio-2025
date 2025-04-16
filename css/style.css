@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+/* Noto Sans KO | Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Eng */
+.en {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Public */
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Layout */
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+}
+
+/* Header */
+header {
+  border: 2px solid teal;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+h1 {
+}
+h1 a {
+}
+
+nav.gnb {
+  /* border: 2px solid gold; */
+}
+nav.gnb ul {
+  display: flex;
+  align-items: center;
+}
+nav.gnb ul li {
+  margin-right: 30px;
+}
+nav.gnb ul li a {
+  display: inline-block;
+}
+nav.gnb ul li:last-child a {
+  padding: 7px 15px;
+}
+
+/* Hover Effect - Gradient */
+.rainbow {
+  background-color: #ffd801;
+  border-radius: 15px;
+  margin-right: 0;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+.rainbow:hover {
+  color: #fff;
+  background-image: linear-gradient(
+    to right,
+    #e7484f,
+    #e7484f 16.65%,
+    #f68b1d 16.65%,
+    #f68b1d 33.3%,
+    #ffd801 33.3%,
+    #fced00 49.95%,
+    #009e4f 49.95%,
+    #009e4f 66.6%,
+    #00aac3 66.6%,
+    #00aac3 83.25%,
+    #732982 83.25%,
+    #732982 100%,
+    #e7484f 100%
+  );
+  animation: rainbow-bg 3s linear infinite;
+  transition: 0.3s;
+}
+@keyframes rainbow-bg {
+  to {
+    background-position: 20vw;
+  }
+}
+
+.menu-mobile {
+  display: none;
+}
+.menu-mobile span {
+}
