@@ -1,18 +1,28 @@
 @charset "utf-8";
 
-/* Noto Sans KO | Poppins */
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Noto Sans KO | Poppins | Cormorant Infant */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Noto+Sans+KR:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Color */
+:root {
+  --primary-color: #f68b1d;
+  --bg-color: #f1f3f5;
+  --font-color: #333;
+}
 
 /* Eng */
 .en {
   font-family: "Poppins", sans-serif;
+}
+.en2 {
+  font-family: "Cormorant Infant", serif;
 }
 
 /* Public */
 a {
   text-decoration: none;
   cursor: pointer;
-  color: #333;
+  color: inherit;
 }
 
 /* Layout */
@@ -20,7 +30,7 @@ body {
   font-family: "Noto Sans KR", sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: #333;
+  color: var(--font-color);
 
   height: 500vh;
 }
@@ -42,12 +52,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--bg-color);
   margin: 0 auto;
   padding: 20px 60px;
   box-sizing: border-box;
   transition: 0.2s;
 
-  border: 2px solid teal;
+  /* border: 2px solid teal; */
 }
 
 /* header 영역 스크롤 시 반응 */
@@ -92,7 +103,7 @@ nav.gnb ul li a .char::after {
   top: 0;
   left: 0;
   opacity: 0.7;
-  color: #333;
+  color: var(--font-color);
   content: attr(data-char);
   transition: transform 0.35s;
   transition-delay: calc(30ms * var(--char-index));
@@ -110,7 +121,7 @@ nav.gnb ul li a:hover .char::after {
 
 /* Hover Effect - Gradient */
 .rainbow {
-  background-color: #ffd801;
+  background-color: #f68b1d;
   border-radius: 15px;
   margin-right: 0;
   box-sizing: border-box;
@@ -147,4 +158,49 @@ nav.gnb ul li a:hover .char::after {
   display: none;
 }
 .menu-mobile span {
+}
+
+/* visual */
+.visual {
+  width: 100%;
+  height: 100vh;
+  border: 2px solid dodgerblue;
+  box-sizing: border-box;
+}
+
+.visual .inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.title-wrap {
+  /* text-align: center; */
+}
+
+.title-wrap h2.title {
+  font-weight: 500;
+  font-size: 6rem;
+  font-style: italic;
+  line-height: 1;
+  z-index: 1;
+}
+.title-wrap h2.title::after {
+  content: "*";
+  color: var(--primary-color);
+}
+
+.title-wrap p {
+  font-weight: 200;
+  font-size: 2.2rem;
+  line-height: 1.5;
+  margin-top: 24px;
+  /* opacity: 0; */
+}
+.title-wrap p strong {
+  font-weight: 500;
+  /* color: var(--primary-color); */
+  opacity: 1;
 }
