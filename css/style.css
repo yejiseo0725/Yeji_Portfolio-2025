@@ -213,11 +213,24 @@ nav.gnb ul li a:hover .char::after {
   opacity: 1;
 }
 
-/* ex */
-body {
-  background: #141212;
+.inner {
+  border: 3px solid dodgerblue;
 }
 
+.inner .logoWrap {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0 auto;
+}
+.inner .logoWrap span {
+  width: 15%;
+}
+.inner .logoWrap span img {
+  width: 100%;
+}
+
+/* ex */
 .wrap {
   position: relative;
   margin: 0 auto;
@@ -229,13 +242,14 @@ body {
   padding: 50px 0 500px;
 
   border: 2px solid gold;
+  overflow: hidden;
 }
-.ex .inner {
+.inner {
   padding: 0 50px;
   box-sizing: border-box;
 }
 
-.ex .inner .brandTit {
+/* .ex .inner .brandTit {
   font-weight: normal;
   font-size: 3rem;
   line-height: 0.9;
@@ -246,20 +260,7 @@ body {
 .ex .inner .subTit {
   font-size: 1rem;
   margin-bottom: 50px;
-}
-
-.ex .inner .logoWrap {
-  display: flex;
-  justify-content: space-between;
-  width: 95%;
-  margin: 0 auto;
-}
-.ex .inner .logoWrap span {
-  width: 15%;
-}
-.ex .inner .logoWrap span img {
-  width: 100%;
-}
+} */
 
 .ex .inner .box {
   display: grid;
@@ -269,6 +270,7 @@ body {
   padding: 60px;
   border-radius: 10px;
   box-sizing: border-box;
+  backdrop-filter: blur(10px);
 }
 .ex .inner .box .mainText {
   grid-row-start: 2;
