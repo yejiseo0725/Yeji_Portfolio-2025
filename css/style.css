@@ -176,29 +176,9 @@ nav.gnb ul li a:hover .char::after {
   box-sizing: border-box;
 }
 
-.and-circle {
-  position: absolute;
-  top: -7%;
-  right: -7%;
-  width: 300px;
-  height: 300px;
-  animation: spin 40s infinite linear;
-}
-.and-circle img {
-  width: 100%;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .title-wrap {
   text-align: center;
+  overflow: hidden;
 }
 
 .title-wrap h1.title {
@@ -210,6 +190,27 @@ nav.gnb ul li a:hover .char::after {
   letter-spacing: -1px;
   z-index: 1;
   margin-top: 30px;
+  /* transition: 0.2s; */
+
+  opacity: 0;
+  visibility: hidden;
+  animation-name: showTitle;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes showTitle {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .title-wrap p {

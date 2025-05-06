@@ -17,7 +17,7 @@ $(function () {
   });
 });
 
-// ex
+// yejiseo
 window.onload = function () {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -67,3 +67,7 @@ window.onload = function () {
       0.4
     );
 };
+
+// $(window).load(function () {
+//   alert("실행되나여");
+// });
