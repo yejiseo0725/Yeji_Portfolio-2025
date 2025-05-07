@@ -99,3 +99,24 @@ function animate() {
 }
 
 animate();
+
+// text coloring animation
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.fromTo(
+  ".intro .about-me span",
+  {
+    "background-size": "0% 100%",
+  },
+  {
+    "background-size": "100% 100%",
+    scrollTrigger: {
+      trigger: ".intro",
+      pinnedContainer: ".intro",
+      start: "0% 20%",
+      end: "50% 60%",
+      markers: true,
+      scrub: 1,
+    },
+  }
+);
