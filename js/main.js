@@ -33,41 +33,69 @@ window.onload = function () {
     })
     .to(
       ".logoWrap #y",
-      { x: "20", y: "1750", rotate: "40", ease: "none", duration: 7 },
+      { x: "20", y: "1300", rotate: "40", ease: "none", duration: 7 },
       0
     )
     .to(
       ".logoWrap #e",
-      { x: "20", y: "1820", rotate: "-50", ease: "none", duration: 7 },
+      { x: "20", y: "1370", rotate: "-50", ease: "none", duration: 7 },
       0.2
     )
     .to(
       ".logoWrap #j",
-      { x: "45", y: "1770", rotate: "50", ease: "none", duration: 7 },
+      { x: "45", y: "1320", rotate: "50", ease: "none", duration: 7 },
       0.4
     )
     .to(
       ".logoWrap #i",
-      { x: "55", y: "1760", rotate: "80", ease: "none", duration: 7 },
+      { x: "55", y: "1310", rotate: "80", ease: "none", duration: 7 },
       0.1
     )
     .to(
       ".logoWrap #s",
-      { x: "20", y: "1850", rotate: "40", ease: "none", duration: 7 },
+      { x: "20", y: "1400", rotate: "40", ease: "none", duration: 7 },
       0
     )
     .to(
       ".logoWrap #e",
-      { x: "20", y: "1920", rotate: "-50", ease: "none", duration: 7 },
+      { x: "20", y: "1380", rotate: "-50", ease: "none", duration: 7 },
       0.2
     )
     .to(
       ".logoWrap #o",
-      { x: "45", y: "1870", rotate: "50", ease: "none", duration: 7 },
+      { x: "45", y: "1320", rotate: "50", ease: "none", duration: 7 },
       0.4
     );
 };
 
-// $(window).load(function () {
-//   alert("실행되나여");
-// });
+// about: floating-box
+const box = document.querySelector(".floating-box");
+let scrollY = window.scrollY;
+let prevScrollY = scrollY;
+let offsetY = 0; // 현재 박스 위치
+let targetOffsetY = 0; // 목표 위치
+const ease = 0.2; // 부드럽게 따라가는 정도
+const maxOffset = 20; // 최대 이동 거리 (±30px)
+
+function animate() {
+  // 스크롤 변화량 계산
+  scrollY = window.scrollY;
+  const delta = scrollY - prevScrollY;
+
+  // 스크롤 변화가 있을 때만 목표 위치를 약간 움직임
+  targetOffsetY = delta * 1.2; // 반응 강도 조절
+  targetOffsetY = Math.max(-maxOffset, Math.min(maxOffset, targetOffsetY));
+
+  // 현재 위치가 목표 위치를 부드럽게 따라가게 하기
+  offsetY += (targetOffsetY - offsetY) * ease;
+
+  // 적용
+  box.style.transform = `translateY(${offsetY}px)`;
+
+  // 현재 스크롤 저장
+  prevScrollY = scrollY;
+
+  requestAnimationFrame(animate);
+}
+
+animate();
