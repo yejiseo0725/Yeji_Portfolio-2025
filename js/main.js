@@ -1,3 +1,11 @@
+// scroll animation
+$(function () {
+  $(".animate").scrolla({
+    mobile: true,
+    once: false,
+  });
+});
+
 $(function () {
   Splitting();
 });
@@ -113,10 +121,10 @@ gsap.fromTo(
     scrollTrigger: {
       trigger: ".intro",
       pinnedContainer: ".intro",
-      start: "0% 20%",
-      end: "50% 60%",
-      markers: true,
-      scrub: 1,
+      start: "30% 60%",
+      end: "80% 100%",
+      // markers: true,
+      scrub: 2,
     },
   }
 );
