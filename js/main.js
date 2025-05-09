@@ -82,8 +82,8 @@ let scrollY = window.scrollY;
 let prevScrollY = scrollY;
 let offsetY = 0; // 현재 박스 위치
 let targetOffsetY = 0; // 목표 위치
-const ease = 0.2; // 부드럽게 따라가는 정도
-const maxOffset = 20; // 최대 이동 거리 (±30px)
+const ease = 0.1; // 부드럽게 따라가는 정도
+const maxOffset = 30; // 최대 이동 거리 (±30px)
 
 function animate() {
   // 스크롤 변화량 계산
@@ -124,7 +124,42 @@ gsap.fromTo(
       start: "30% 60%",
       end: "80% 100%",
       // markers: true,
-      scrub: 2,
+      scrub: 3,
     },
   }
 );
+
+// workList
+gsap.registerPlugin(ScrollTrigger);
+
+let activeImg;
+
+gsap.utils.toArray(".workList ul li a").forEach((elem) => {
+  let image = elem.querySelector("img.fadeImg"),
+    align = (e) => {
+      setX(e.clientX);
+      setY(e.clientY);
+    },
+    startPoint = () => document.addEventListener("mousemove", align),
+    stopPoint = () => document.removeEventListener("mousemove", align),
+    fade = gsap.to(image, { autoAlpha: 1, ease: "none", paused: true });
+
+  elem.addEventListener("mouseenter", (e) => {
+    fade.play();
+    startPoint();
+
+    if (activeImg) {
+      gsap.set(image, {
+        x: gsap.getProperty(activeImg, "x"),
+        y: gsap.getProperty(activeImg, "y"),
+      });
+    }
+    activeImg = image;
+    setX = gsap.quickTo(image, "x", { duration: 0.5, ease: Elastic });
+    setY = gsap.quickTo(image, "y", { duration: 0.5, ease: Elastic });
+
+    align(e);
+  });
+
+  elem.addEventListener("mouseleave", () => fade.reverse());
+});
