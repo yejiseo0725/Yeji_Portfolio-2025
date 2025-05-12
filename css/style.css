@@ -476,7 +476,7 @@ nav.gnb ul li a:hover .char::after {
 
 /* workList */
 .workList {
-  width: 100%;
+  width: 100vw;
   color: var(--font-color);
   margin-bottom: 200px;
 }
@@ -561,4 +561,63 @@ nav.gnb ul li a:hover .char::after {
 .workList ul li a:hover span {
   color: #fff;
   border: 2px solid #fff;
+}
+
+/* contact */
+.contact {
+  width: 100vw;
+  /* height: 100vh; */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+.contact .inner {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.contact h4 {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+.contact h5 {
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  margin-bottom: 50px;
+}
+.contact a.email {
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+/* footer */
+footer {
+  width: 100vw;
+}
+footer .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  border-top: 1px solid var(--gray-color);
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+footer a {
+  width: 50px;
+  height: 50px;
+}
+footer a img {
+  width: 100%;
+  object-fit: contain;
+}
+footer small {
+  font-size: 1.1rem;
+  font-weight: 300;
 }
