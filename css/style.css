@@ -504,29 +504,42 @@ nav.gnb ul li a:hover .char::after {
 .workList ul {
 }
 .workList ul li {
+  display: flex;
   height: 350px;
   border-bottom: 1px solid var(--gray-color);
   transition: 0.5s;
 }
-.workList ul li a {
+.workList ul li a.project {
   display: block;
-  width: 100%;
+  width: 80%;
   height: 100%;
   padding: 50px 80px;
   box-sizing: border-box;
   transition: 0.5s;
 }
+.workList ul li a.view-details {
+  width: 20%;
 
-.workList ul li a .fadeImg {
+  border: 2px solid dodgerblue;
+}
+.workList ul li a.view-details button {
+  all: unset;
+  width: 100%;
+  height: 100%;
+
+  border: 2px solid tomato;
+}
+
+.workList ul li a.project .fadeImg {
   position: fixed;
   top: 0;
   left: 0;
-  width: 550px;
-  height: 400px;
+  width: 450px;
+  height: 330px;
   opacity: 0;
 }
 
-.workList ul li a span {
+.workList ul li a.project span {
   display: inline-block;
   padding: 5px 10px;
   box-sizing: border-box;
@@ -537,28 +550,31 @@ nav.gnb ul li a:hover .char::after {
   margin-right: 7px;
 }
 
-.workList ul li a p {
+.workList ul li a.project p {
 }
-.workList ul li a p.li-title {
+.workList ul li a.project p.li-title {
   font-size: 4rem;
   font-weight: 600;
   margin-bottom: 20px;
   color: var(--font-color);
 }
-.workList ul li a p.li-info {
+.workList ul li a.project p.li-info {
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.7;
   color: var(--font-color);
 }
 
-.workList ul li a:hover {
+.workList ul li a.project:hover {
   background-color: var(--primary-color);
+}
+.workList ul li a.view-details:hover {
+  background-color: var(--gray-color);
 }
 .workList ul li:hover {
   height: 400px;
 }
-.workList ul li a:hover span {
+.workList ul li a.project:hover span {
   color: #fff;
   border: 2px solid #fff;
 }
@@ -566,7 +582,6 @@ nav.gnb ul li a:hover .char::after {
 /* contact */
 .contact {
   width: 100vw;
-  /* height: 100vh; */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -585,13 +600,35 @@ nav.gnb ul li a:hover .char::after {
 .contact h5 {
   font-size: 5rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.1;
   letter-spacing: 1px;
   margin-bottom: 50px;
 }
 .contact a.email {
   font-size: 2.5rem;
   font-weight: 300;
+  position: relative;
+  transition: 0.3s;
+}
+.contact a.email::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--font-color);
+  transition: 0.3s;
+}
+
+.contact a.email:hover {
+  color: var(--primary-color);
+}
+.contact a.email:hover + .contact .inner {
+  background-color: #009e4f;
+}
+.contact a.email:hover::after {
+  background-color: var(--primary-color);
 }
 
 /* footer */
@@ -605,7 +642,7 @@ footer .inner {
   width: 80%;
   margin: 0 auto;
   border-top: 1px solid var(--gray-color);
-  padding: 30px 20px;
+  padding: 20px;
   box-sizing: border-box;
 }
 
