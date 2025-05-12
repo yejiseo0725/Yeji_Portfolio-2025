@@ -18,9 +18,9 @@
             <nav class="gnb">
                 <ul class="en">
                     <li><a href="index.html" data-splitting>Home</a></li>
-                    <li><a href="#" data-splitting>About</a></li>
-                    <li><a href="#" data-splitting>Work</a></li>
-                    <li><a href="#" class="rainbow">Get In Touch</a></li>
+                    <li><a href="#about" data-splitting>About</a></li>
+                    <li><a href="#work" data-splitting>Work</a></li>
+                    <li><a href="#contact" class="rainbow">Get In Touch</a></li>
                 </ul>
             </nav>
         </header>
@@ -48,7 +48,7 @@
         </section>
 
         <!-- about -->
-        <section class="about">
+        <section class="about" id="about">
 
             <div class="inner">
 
@@ -61,6 +61,19 @@
                         <div class="box-left">
                             <div class="box-wrap profile-img">
                                 <img src="/images/me.jpg" alt="">
+                            </div>
+
+                            <div class="box-wrap tools">
+                                <h4 class="en">Tools & Skills</h4>
+                                <ul class="icon-ul">
+                                    <li><img src="/images/logo/html_logo.png" alt="html-logo"></li>
+                                    <li><img src="/images/logo/css_logo.png" alt="css-logo"></li>
+                                    <li><img src="/images/logo/js_logo.png" alt="js-logo"></li>
+                                    <li><img src="/images/logo/jquery_logo.png" alt="jquery-logo"></li>
+                                    <li><img src="/images/logo/figma_logo.png" alt="figma-logo"></li>
+                                    <li><img src="/images/logo/ps_logo.png" alt="ps-logo"></li>
+                                    <li><img src="/images/logo/ai_logo.png" alt="ai-logo"></li>
+                                </ul>
                             </div>
                         </div>
 
@@ -86,23 +99,14 @@
                                         역량 강화
                                     </p>
                                 </div>
+                            </div>
+
+                            <div class="box-wrap education">
+                                <h4 class="en">Education</h4>
                                 <div class="ex-wrap">
                                     <strong>하이미디어아카데미<span>2022. 02 - 2022. 08</span></strong>
                                     <p>- UI/UX웹디자인&웹퍼블리셔 교육 수료</p>
                                 </div>
-                            </div>
-
-                            <div class="box-wrap tools">
-                                <h4 class="en">Tools & Skills</h4>
-                                <ul class="icon-ul">
-                                    <li><img src="/images/logo/html_logo.png" alt="html-logo"></li>
-                                    <li><img src="/images/logo/css_logo.png" alt="css-logo"></li>
-                                    <li><img src="/images/logo/js_logo.png" alt="js-logo"></li>
-                                    <li><img src="/images/logo/jquery_logo.png" alt="jquery-logo"></li>
-                                    <li><img src="/images/logo/figma_logo.png" alt="figma-logo"></li>
-                                    <li><img src="/images/logo/ps_logo.png" alt="ps-logo"></li>
-                                    <li><img src="/images/logo/ai_logo.png" alt="ai-logo"></li>
-                                </ul>
                             </div>
 
                         </div>
@@ -142,7 +146,7 @@
         </section>
 
         <!-- work-list -->
-        <section class="workList">
+        <section class="workList" id="work">
 
             <div class="inner">
 
@@ -153,27 +157,30 @@
 
                 <ul>
                     <li>
-                        <a href="#" target="_blank">
+                        <a href="#" onclick="return false" class="project" target="_blank">
                             <img class="fadeImg" src="./images/img3.jpg" alt="">
                             <span>2024</span><span>Responsive</span>
                             <p class="li-title">더봄케어: 우리FIS</p>
                             <p class="li-info">임직원을 위한 정신건강 근로자 지원 프로그램(EAP)<br>
                                 *** 내부망 접근권한 제한으로, 디자인 확인만 가능합니다.</p>
-
                         </a>
+
+                        <a href="#" class="view-details"><button>View Details</button></a>
                     </li>
 
                     <li>
-                        <a href="https://doumdoc.com/User_default/main" target="_blank">
+                        <a href="https://doumdoc.com/User_default/main" class="project" target="_blank">
                             <img class="fadeImg" src="./images/img1.jpg" alt="">
                             <span>2024</span><span>Responsive</span>
                             <p class="li-title">도움닥</p>
                             <p class="li-info">가볍고 편안하게 마음 건강을 케어할 수 있는 정신건강 서비스</p>
                         </a>
+
+                        <a href="#" class="view-details"><button>View Details</button></a>
                     </li>
 
                     <li>
-                        <a href="#" target="_blank">
+                        <a href="#" onclick="return false" class="project" target="_blank">
                             <img class="fadeImg" src="./images/img4.jpg" alt="">
                             <span>2024</span><span>Responsive</span><span>Landing</span>
                             <p class="li-title">정신건강플랫폼 V1</p>
@@ -181,31 +188,62 @@
                                 *** 내부망 접근권한 제한으로, 디자인 확인만 가능합니다.</p>
                             </p>
                         </a>
+
+                        <a href="#" class="view-details"><button>View Details</button></a>
                     </li>
 
                     <li>
-                        <a href="https://www.theboms.co.kr/202311/01_main.html" target="_blank">
+                        <a href="https://www.theboms.co.kr/202311/01_main.html" class="project" target="_blank">
                             <img class="fadeImg" src="./images/img5.jpg" alt="">
                             <span>2024</span><span>Responsive</span>
                             <p class="li-title">케이더봄</p>
                             <p class="li-info">IT 디지털 헬스케어 플랫폼 기업</p>
                         </a>
+
+                        <a href="#" class="view-details"><button>View Details</button></a>
                     </li>
 
                     <li>
-                        <a href="https://doumdoc.com/User_icbt/icbt_dashboard" target="_blank">
+                        <a href="https://doumdoc.com/User_icbt/icbt_dashboard" class="project" target="_blank">
                             <img class="fadeImg" src="./images/img2.jpg" alt="">
                             <span>2023</span><span>Responsive</span>
                             <p class="li-title">ICBT 꿀잠프로젝트</p>
-                            <p class="li-info">불면증 개선 인지행동 치료프로그램<br>
+                            <p class="li-info">불면증 개선 ICBT 인지행동 치료 프로그램<br>
                                 *** 홈페이지에 가입 후 신청해야 프로그램을 볼 수 있습니다.</p>
                         </a>
+
+                        <a href="#" class="view-details"><button>View Details</button></a>
                     </li>
                 </ul>
 
             </div>
 
         </section>
+
+        <!-- contact -->
+        <section class="contact" id="contact">
+
+            <div class="inner">
+
+                <h4 class=en>Get In Touch</h4>
+                <h5 class=en>YEJI SEO</h5>
+                <a href="mailto:yejiseo0725@gmail.com" class="email en">yejiseo0725@gmail.com</a>
+
+            </div>
+
+        </section>
+
+        <!-- footer -->
+        <footer>
+
+            <div class="inner">
+                <a href="https://github.com/yejiseo0725?tab=overview&from=2025-01-01&to=2025-01-04" target="_blank"><img
+                        src="./images/logo/github-logo.png" alt="github-logo"></a>
+                <iframe width="100vw" height="100vh" src=""></iframe>
+                <small class="en">© 2025 YEJI SEO All Rights Reserved</small>
+            </div>
+
+        </footer>
 
     </div>
 
