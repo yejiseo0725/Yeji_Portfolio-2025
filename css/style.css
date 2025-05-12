@@ -321,21 +321,25 @@ nav.gnb ul li a:hover .char::after {
 
 .experiences {
 }
-.experiences .ex-wrap {
+.experiences .ex-wrap,
+.education .ex-wrap {
   margin-bottom: 20px;
 }
-.experiences .ex-wrap strong {
+.experiences .ex-wrap strong,
+.education .ex-wrap strong {
   display: flex;
   justify-content: space-between;
   font-weight: 500;
   font-size: 1.1rem;
   margin-bottom: 12px;
 }
-.experiences .ex-wrap strong span {
+.experiences .ex-wrap strong span,
+.education .ex-wrap strong span {
   font-weight: 400;
   color: #787878;
 }
-.experiences .ex-wrap p {
+.experiences .ex-wrap p,
+.education .ex-wrap p {
   font-weight: 300;
   line-height: 1.8;
   padding-bottom: 5px;
