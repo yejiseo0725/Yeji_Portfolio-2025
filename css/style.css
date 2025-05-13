@@ -251,6 +251,55 @@ nav.gnb ul li a:hover .char::after {
   object-fit: contain;
 }
 
+.scroll-indicator {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 70px;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.line {
+  width: 1px;
+  height: 100%;
+  background-color: var(--primary-color);
+  animation: scrollLine 2s linear infinite;
+}
+
+@keyframes scrollLine {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.scroll-down-text {
+  position: absolute;
+  bottom: 5%;
+}
+.scroll-down-text p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
 /* about */
 .about {
 }
@@ -449,27 +498,27 @@ nav.gnb ul li a:hover .char::after {
 }
 
 .keyword.key1 {
-  top: 40%;
+  top: 30%;
   left: 30%;
   transform: rotate(9deg);
 }
 .keyword.key2 {
-  top: 50%;
+  top: 40%;
   left: 15%;
   transform: rotate(6deg);
 }
 .keyword.key3 {
-  top: 42%;
+  top: 32%;
   left: 20%;
   transform: rotate(7deg);
 }
 .keyword.key4 {
-  top: 42%;
+  top: 32%;
   left: 65%;
   transform: rotate(-7deg);
 }
 .keyword.key5 {
-  top: 47%;
+  top: 37%;
   left: 76%;
   transform: rotate(-5deg);
 }
