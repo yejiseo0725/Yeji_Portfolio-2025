@@ -76,6 +76,66 @@ window.onload = function () {
     );
 };
 
+// about: resume
+$(document).ready(function () {
+  const $container = $(".resume a"); // 이벤트를 <a>에 걸기
+  const $button = $container.find("button");
+  const $span = $button.find("span");
+  const $arrowWrap = $button.find(".arrow-wrap");
+  const $arrowBg = $button.find(".arrow-bg");
+  const $arrowImg = $button.find(".arrow-img");
+  const $body = $("body");
+  const $box = $(".box");
+
+  const originalBg = $body.css("background-color"); // 원래 색 저장
+  const originalBoxBg = $box.css("background");
+
+  $container.on("mousemove", function (e) {
+    const rect = $button[0].getBoundingClientRect(); // button 기준으로 거리 계산
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const dx = e.clientX - centerX;
+    const dy = e.clientY - centerY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+
+    if (distance < 80) {
+      const moveX = dx * 0.9;
+      const moveY = dy * 0.9;
+      $span.css("transform", `translate(${moveX}px, ${moveY}px)`);
+      $arrowWrap.css("transform", `translate(${moveX}px, ${moveY}px)`);
+      $body.css("background-color", "var(--primary-color)");
+
+      // 배경색 변경
+      $body.css("background-color", "var(--primary-color)");
+      // box색 변경
+      $box.css("background", "rgba(255, 255, 255, 1)");
+
+      // arrow 배경 슬라이드 등장 + 이미지 교체
+      $arrowBg.css("left", "0%");
+      $arrowImg.attr("src", "./images/arrow-r-w.svg");
+    } else {
+      $span.css("transform", "translate(0, 0)");
+      $arrowWrap.css("transform", "translate(0, 0)");
+      $body.css("background-color", originalBg); // 원래 색으로 복원
+      $box.css("background", originalBoxBg);
+
+      $arrowBg.css("left", "100%");
+      $arrowImg.attr("src", "./images/arrow-r.svg");
+    }
+  });
+
+  $container.on("mouseleave", function () {
+    $span.css("transform", "translate(0, 0)");
+    $arrowWrap.css("transform", "translate(0, 0)");
+    $body.css("background-color", originalBg);
+    $box.css("background", originalBoxBg);
+
+    $arrowBg.css("left", "100%");
+    $arrowImg.attr("src", "./images/arrow-r.svg");
+  });
+});
+
 // about: floating-box
 const box = document.querySelector(".floating-box");
 let scrollY = window.scrollY;
