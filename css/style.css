@@ -799,3 +799,237 @@ footer small {
   font-size: 1.1rem;
   font-weight: 300;
 }
+
+@media (max-width: 1024px) {
+  body {
+  }
+
+  .title-wrap h1.title {
+    font-size: 6rem;
+  }
+  .title-wrap p {
+    margin-top: 10px;
+  }
+  .line {
+    height: 60px;
+  }
+
+  .box-inner {
+    flex-direction: column;
+  }
+  .box-left,
+  .box-right {
+    width: 100%;
+  }
+
+  .keyword.key1 {
+    top: 20%;
+  }
+  .keyword.key2 {
+    top: 22%;
+  }
+  .keyword.key3 {
+    top: 29%;
+  }
+  .keyword.key4 {
+    top: 22%;
+  }
+  .keyword.key5 {
+    top: 27%;
+  }
+}
+
+@media (max-width: 630px) {
+  header {
+    width: 80%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title-wrap h1.title {
+    font-size: 4rem;
+  }
+  .title-wrap p {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+
+  .box {
+    width: 92%;
+    padding: 30px;
+  }
+
+  .intro .inner {
+    padding: 50px;
+  }
+  .intro .about-me {
+    text-align: start;
+  }
+  .intro .about-me span br {
+    display: none;
+  }
+  .keyword {
+    font-size: 0.8rem;
+  }
+  .keyword.key1 {
+    left: 24%;
+  }
+  .keyword.key2 {
+    left: 10%;
+  }
+  .keyword.key3 {
+    left: 14%;
+  }
+  .keyword.key4 {
+    left: 55%;
+  }
+  .keyword.key5 {
+    left: 65%;
+  }
+
+  .workList ul li {
+    padding: 50px 20px;
+  }
+  .workList ul li p.li-title {
+    font-size: 3.3rem;
+  }
+  .workList ul li p.li-info {
+    font-size: 1.1rem;
+  }
+
+  .contact h5 {
+    font-size: 4rem;
+  }
+  .contact a.email {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 540px) {
+  header {
+    width: 90%;
+  }
+
+  .workList ul li p.li-title {
+    font-size: 2.7rem;
+  }
+}
+
+@media (max-width: 470px) {
+  header {
+    width: 95%;
+    padding: 0;
+  }
+
+  .box h3 {
+    font-size: 3rem;
+  }
+  .box-left,
+  .box-right {
+    padding: 8px;
+  }
+
+  .experiences .ex-wrap p,
+  .education .ex-wrap p {
+    line-height: 2;
+  }
+
+  .experiences .ex-wrap strong,
+  .education .ex-wrap strong {
+    flex-direction: column;
+  }
+
+  .workList .inner {
+    width: 85%;
+  }
+  .workList ul li {
+    padding: 50px 0;
+    height: 430px;
+  }
+  .workList ul li p.li-info {
+    font-size: 0.9rem;
+  }
+
+  .contact h5 {
+    font-size: 3.5rem;
+  }
+  .contact a.email {
+    font-size: 1.7rem;
+  }
+
+  footer .inner {
+    width: 90%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  header {
+    width: 100%;
+    border-radius: 0;
+  }
+  nav.gnb ul li {
+    margin: 0 12px;
+  }
+
+  .title-wrap h1.title {
+    font-size: 3rem;
+  }
+
+  .box {
+    padding: 20px;
+  }
+  .box h3 {
+    margin-top: 30px;
+  }
+
+  .intro .inner {
+    padding: 30px;
+  }
+
+  .workList ul li a {
+    margin-right: 0;
+    font-size: 0.9rem;
+  }
+
+  footer small {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .workList ul li p.li-title {
+    font-size: 2.4rem;
+  }
+  .workList ul li a {
+    padding: 7px 10px;
+  }
+}
+
+@media (max-width: 350px) {
+  nav.gnb ul li {
+    margin: 0 9px;
+  }
+  nav.gnb ul li:last-child a {
+    padding: 12px 14px;
+  }
+
+  .workList ul li span {
+    font-size: 0.9rem;
+  }
+
+  .contact h4 {
+    font-size: 1.4rem;
+  }
+  .contact a.email {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .contact h5 {
+    font-size: 3rem;
+  }
+}
