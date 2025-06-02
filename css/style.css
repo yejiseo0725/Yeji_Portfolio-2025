@@ -1,7 +1,7 @@
 /* layout */
 * {
   font-family: "Pretendard";
-  color: var(--font-color-w);
+  color: var(--font-color);
 }
 
 body {
@@ -30,6 +30,7 @@ header .gnb .gnb-logo {
 header .gnb .gnb-logo a {
   font-weight: 800;
   font-size: 1.2rem;
+  color: var(--font-color-w);
 }
 
 header .gnb ul {
@@ -49,6 +50,7 @@ header .gnb ul li:last-child {
 header .gnb ul li a {
   font-weight: 500;
   font-size: 0.9rem;
+  color: var(--font-color-w);
 }
 header .gnb ul li:last-child a {
   display: block;
@@ -85,6 +87,7 @@ header .gnb ul li:last-child a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--font-color-w);
 }
 .visual h1 span.title {
   font-weight: 200;
@@ -110,6 +113,7 @@ header .gnb ul li:last-child a:hover {
   margin-top: 3%;
   margin-left: 50%;
   width: 25%;
+  color: var(--font-color-w);
 }
 
 .visual .arrow-wrap {
@@ -137,4 +141,142 @@ header .gnb ul li:last-child a:hover {
   100% {
     bottom: 5%;
   }
+}
+
+/* section 1 */
+.sc1 {
+  border: 2px solid teal;
+  box-sizing: border-box;
+}
+.sc1 .inner {
+}
+
+.sc1 .my-pic {
+  padding: 80px 0 40px 0;
+  box-sizing: border-box;
+}
+.sc1 .my-pic strong {
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-top: 30px;
+}
+.sc1 .my-pic strong .hand {
+  display: inline-block;
+  animation: handyAni 0.6s infinite alternate;
+  font-size: 2.2rem;
+  margin-left: 3px;
+}
+@keyframes handyAni {
+  from {
+    transform: rotate(15deg);
+  }
+  to {
+    transform: rotate(-5deg);
+  }
+}
+
+.sc1 .my-pic .my-pic-area {
+  width: 270px;
+  height: 300px;
+  object-fit: cover;
+  border-top-right-radius: 70px;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.sc1 .my-pic .my-pic-area img {
+  width: 100%;
+  height: 100%;
+}
+
+.sc1 .my-info {
+  width: 70%;
+  margin: 0 auto;
+}
+.sc1 .my-info h2 {
+  float: left;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 7px 30px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+.sc1 .my-info p {
+  font-weight: 200;
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+
+.accordion {
+  width: 70%;
+  margin: 80px auto;
+}
+.accordion ul {
+}
+.accordion ul li {
+}
+
+.accordion ul li .acc-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1.4rem;
+  letter-spacing: 0.4px;
+  padding: 25px 30px;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-top: 1px solid var(--font-color);
+  border-bottom: 1px solid var(--font-color);
+}
+.accordion ul li .acc-title span {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.accordion ul li .acc-title span img {
+  width: 100%;
+  height: 100%;
+}
+
+.accordion ul li .acc-desc {
+  padding: 40px 30px;
+  box-sizing: border-box;
+}
+.accordion ul li .acc-desc p {
+  font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #888;
+}
+
+.resume-btn-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+}
+.resume-btn-area button {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: #001429;
+  border: none;
+  transform: rotate(-18deg);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.resume-btn-area button:hover {
+  transform: rotate(-18deg) scale(1.1);
+  box-shadow: 5px 5px 12px rgba(0, 20, 41, 0.4);
+}
+
+.resume-btn-area button a {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--font-color-w);
 }
