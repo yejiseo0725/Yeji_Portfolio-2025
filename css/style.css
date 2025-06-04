@@ -70,7 +70,7 @@ header .gnb ul li:last-child a:hover {
   width: 100%;
   height: 100vh;
   box-sizing: border-box;
-  background-color: #001429;
+  background-color: var(--main-color);
 }
 .visual .inner {
   width: 100%;
@@ -145,7 +145,6 @@ header .gnb ul li:last-child a:hover {
 
 /* section 1 */
 .sc1 {
-  border: 2px solid teal;
   box-sizing: border-box;
 }
 .sc1 .inner {
@@ -278,5 +277,85 @@ header .gnb ul li:last-child a:hover {
 .resume-btn-area button a {
   font-weight: 600;
   font-size: 1.3rem;
+  color: var(--font-color-w);
+}
+
+/* section 2 */
+.sc2 {
+  border: 2px solid teal;
+  box-sizing: border-box;
+  background-color: var(--main-color);
+  padding: 200px 0;
+}
+.sc2 .inner {
+}
+
+.traits-line-wrap {
+}
+.traits-line-wrap .traits-line {
+}
+.traits-line-wrap .line1 {
+}
+.traits-line-wrap .line2 {
+}
+
+.traits-line-wrap .traits-line span.trait {
+  color: var(--font-color-w);
+}
+
+.h3-wrap {
+  width: 70%;
+  margin: 0 auto 100px;
+}
+.h3-wrap h3 {
+  font-weight: 500;
+  font-size: 7rem;
+  line-height: 1;
+  color: var(--font-color-w);
+}
+.h3-wrap h3 span {
+  display: block;
+  color: var(--font-color-w);
+  margin-left: 250px;
+}
+
+ul.workList {
+}
+ul.workList li {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+}
+ul.workList li a {
+  display: inline-block;
+  padding: 40px;
+  box-sizing: border-box;
+  color: var(--font-color-w);
+
+  border: 2px solid green;
+}
+ul.workList li a.img-box {
+  width: 60%;
+  height: 450px;
+  object-fit: cover;
+}
+ul.workList li a.img-box img {
+  width: 100%;
+  height: 100%;
+}
+
+ul.workList li a.text-box {
+  display: flex;
+  align-items: flex-end;
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 1.1;
+
+  width: 40%;
+  margin-left: 20px;
+
+  border: 2px solid tomato;
+}
+ul.workList li a.text-box p {
   color: var(--font-color-w);
 }
