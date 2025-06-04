@@ -114,7 +114,7 @@ header .gnb ul li:last-child a:hover {
   display: block;
 }
 .visual h1 span strong img {
-  width: 240px;
+  width: 200px;
   height: 100px;
   object-fit: cover;
   border-radius: 60px;
@@ -351,8 +351,8 @@ ul.workList li a {
 }
 
 ul.workList li .img-box {
-  width: 60%;
-  height: 500px;
+  width: 65%;
+  height: 600px;
   object-fit: cover;
   padding: 40px;
   box-sizing: border-box;
@@ -375,7 +375,7 @@ ul.workList li .img-box a:hover img {
 }
 
 ul.workList li .text-box {
-  width: 40%;
+  width: 35%;
   padding-bottom: 40px;
   box-sizing: border-box;
 }
@@ -410,7 +410,7 @@ ul.workList li .text-box a em {
 }
 
 ul.workList li .text-box a p {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 3rem;
   color: var(--font-color-w);
   letter-spacing: 1px;
