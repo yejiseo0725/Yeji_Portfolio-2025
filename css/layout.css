@@ -1,3 +1,5 @@
+@import url("https://fonts.cdnfonts.com/css/ss-magnolia");
+
 @font-face {
   font-family: "Pretendard";
   font-weight: 900;
@@ -83,4 +85,8 @@
   --font-color: #333;
   --font-color-w: #fff;
   --main-color: #001429;
+}
+
+.en {
+  font-family: "SS Magnolia", sans-serif;
 }
