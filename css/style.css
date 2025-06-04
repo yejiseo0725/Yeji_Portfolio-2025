@@ -95,6 +95,7 @@ header .gnb ul li:last-child a:hover {
   margin: 0 auto;
   text-align: center;
   line-height: 1.1;
+  /* text-transform: uppercase; */
 }
 .visual h1 span {
   display: flex;
@@ -102,9 +103,10 @@ header .gnb ul li:last-child a:hover {
   align-items: center;
   color: var(--font-color-w);
 }
+
 .visual h1 span.title {
   font-weight: 300;
-  font-size: 9rem;
+  font-size: 10rem;
 }
 .visual h1 span.title-2 {
   font-weight: 400;
@@ -112,14 +114,16 @@ header .gnb ul li:last-child a:hover {
 
 .visual h1 span strong {
   display: block;
+  padding: 0 2rem;
+  box-sizing: border-box;
 }
 .visual h1 span strong img {
+  display: block;
   width: 200px;
   height: 100px;
   object-fit: cover;
   border-radius: 60px;
   overflow: hidden;
-  margin: 0 2rem;
 }
 .visual p {
   font-weight: 300;
@@ -325,12 +329,13 @@ header .gnb ul li:last-child a:hover {
   line-height: 1;
   letter-spacing: 3px;
   color: var(--font-color-w);
+  /* text-transform: uppercase; */
 }
 .h3-wrap h3 span {
   display: block;
   color: var(--font-color-w);
   line-height: 1.1;
-  margin-left: 260px;
+  margin-left: 300px;
 }
 
 ul.workList {
