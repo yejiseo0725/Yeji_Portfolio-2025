@@ -255,6 +255,7 @@ header .gnb ul li:last-child a:hover {
   object-fit: contain;
 }
 .accordion ul li .acc-title span img {
+  display: block;
   width: 100%;
   height: 100%;
 }
@@ -299,24 +300,23 @@ header .gnb ul li:last-child a:hover {
 
 /* section 2 */
 .sc2 {
-  border: 2px solid teal;
   box-sizing: border-box;
   background-color: var(--main-color);
-  padding: 200px 0;
-}
-.sc2 .inner {
-}
-
-.traits-line-wrap {
-}
-.traits-line-wrap .traits-line {
-}
-.traits-line-wrap .line1 {
-}
-.traits-line-wrap .line2 {
+  padding: 200px 0 250px;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
 }
 
-.traits-line-wrap .traits-line span.trait {
+.pj-cat {
+  padding: 20px 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--font-color-w);
+  margin-bottom: 80px;
+}
+.pj-cat strong {
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
   color: var(--font-color-w);
 }
 
@@ -325,7 +325,7 @@ header .gnb ul li:last-child a:hover {
 }
 .h3-wrap h3 {
   font-weight: 500;
-  font-size: 9rem;
+  font-size: 7rem;
   line-height: 1;
   letter-spacing: 3px;
   color: var(--font-color-w);
@@ -339,6 +339,7 @@ header .gnb ul li:last-child a:hover {
 }
 
 ul.workList {
+  margin-bottom: 80px;
 }
 ul.workList li {
   display: flex;
@@ -419,4 +420,33 @@ ul.workList li .text-box a p {
   font-size: 3rem;
   color: var(--font-color-w);
   letter-spacing: 1px;
+}
+
+ul.workExp {
+}
+ul.workExp li {
+}
+
+ul.workExp li a {
+  display: block;
+}
+ul.workExp li:nth-child(even) {
+  text-align: end;
+}
+
+ul.workExp li a h4 {
+  font-weight: 500;
+  font-size: 3.9vw;
+  line-height: 1.1;
+  color: var(--font-color-w);
+}
+ul.workExp li a span {
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: var(--font-color-w);
+  transition: 0.4s;
+  opacity: 0;
+}
+ul.workExp li a:hover span {
+  opacity: 1;
 }
