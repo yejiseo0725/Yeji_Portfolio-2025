@@ -229,6 +229,69 @@ header .gnb ul li:last-child a:hover {
   line-height: 1.7;
 }
 
+.my-skill {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
+.skillSet {
+  margin: 0 30px;
+  box-sizing: border-box;
+}
+
+.skill-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 160px;
+  border-radius: 30px;
+  margin: 10px auto 0;
+  background: conic-gradient(#f0f0f0 0%, var(--font-color-w) 25%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.skill-card .skill-card-img {
+  /* border: 2px solid tan; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  height: 45%;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+.skill-card .skill-card-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.skill-text {
+  margin-top: 40px;
+  padding-bottom: 1rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+.skill-text strong {
+  text-align: center;
+  display: block;
+  font-weight: 500;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+.skill-text p {
+  /* border: 2px solid tomato; */
+
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.6;
+  padding-bottom: 1rem;
+  box-sizing: border-box;
+}
+
 .accordion {
   margin: 80px auto 60px;
 }
@@ -454,7 +517,6 @@ ul.workExp li a:hover span {
 
 @media (max-width: 1300px) {
   .inner {
-    border: 3px solid tomato;
     max-width: 1000px;
   }
 
@@ -462,11 +524,20 @@ ul.workExp li a:hover span {
     font-size: 7rem;
   }
   .visual p {
-    width: 30%;
+    width: 35%;
     margin-left: 25%;
   }
   .visual .arrow-wrap {
+    width: 55px;
     right: 10%;
+  }
+
+  .sc1 .my-pic .my-pic-area {
+    width: 200px;
+    height: 220px;
+  }
+  .sc1 .my-info p {
+    font-size: 1.6rem;
   }
 
   ul.workList li .img-box {
