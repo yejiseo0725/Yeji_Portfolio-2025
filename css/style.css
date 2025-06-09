@@ -7,6 +7,7 @@
 body {
   position: relative;
   height: 1000vh;
+  font-size: 16px;
 }
 
 .inner {
@@ -436,7 +437,7 @@ ul.workExp li:nth-child(even) {
 
 ul.workExp li a h4 {
   font-weight: 500;
-  font-size: 3.9vw;
+  font-size: 6rem;
   line-height: 1.1;
   color: var(--font-color-w);
 }
@@ -449,4 +450,33 @@ ul.workExp li a span {
 }
 ul.workExp li a:hover span {
   opacity: 1;
+}
+
+@media (max-width: 1300px) {
+  .inner {
+    border: 3px solid tomato;
+    max-width: 1000px;
+  }
+
+  .visual h1 span.title {
+    font-size: 7rem;
+  }
+  .visual p {
+    width: 30%;
+    margin-left: 25%;
+  }
+  .visual .arrow-wrap {
+    right: 10%;
+  }
+
+  ul.workList li .img-box {
+    height: 450px;
+  }
+  ul.workList li .text-box a p {
+    font-size: 2.5rem;
+  }
+
+  ul.workExp li a h4 {
+    font-size: 4.3rem;
+  }
 }
