@@ -6,7 +6,6 @@
 
 body {
   position: relative;
-  height: 1000vh;
   font-size: 16px;
 }
 
@@ -113,6 +112,23 @@ header .gnb ul li:last-child a:hover {
   font-weight: 400;
 }
 
+.visual h1 span b {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 2rem 1.5rem 0 1.5rem;
+}
+.visual h1 span b img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.visual h1 span:first-child b {
+  width: 80px;
+  height: 80px;
+}
+
 .visual h1 span strong {
   display: block;
   padding: 0 2rem;
@@ -126,13 +142,30 @@ header .gnb ul li:last-child a:hover {
   border-radius: 60px;
   overflow: hidden;
 }
+
+.visual .visual-text {
+  display: flex;
+  align-items: center;
+  margin-top: 3%;
+  margin-left: 50%;
+}
+.visual .visual-text b {
+  display: block;
+  width: 70px;
+  height: 70px;
+  margin-right: 1.5rem;
+}
+.visual .visual-text b img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .visual p {
+  width: 55%;
   font-weight: 300;
   line-height: 1.5;
   font-size: 0.9rem;
-  margin-top: 3%;
-  margin-left: 30%;
-  width: 25%;
   color: var(--font-color-w);
 }
 
@@ -166,20 +199,21 @@ header .gnb ul li:last-child a:hover {
 /* section 1 */
 .sc1 {
   box-sizing: border-box;
+  background-color: var(--font-color-w);
 }
 .sc1 .inner {
 }
 
 .sc1 .my-pic {
-  padding: 240px 0 80px;
+  padding: 240px 0 60px;
   box-sizing: border-box;
 }
 .sc1 .my-pic strong {
   display: block;
   text-align: center;
   font-weight: 700;
-  font-size: 2rem;
-  margin-top: 40px;
+  font-size: 3rem;
+  margin-top: 30px;
 }
 .sc1 .my-pic strong .hand {
   display: inline-block;
@@ -230,9 +264,18 @@ header .gnb ul li:last-child a:hover {
 }
 
 .my-skill {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  margin-top: 80px;
+  margin-top: 150px;
+}
+.my-skill::before {
+  content: "Drag Me!";
+  position: absolute;
+  left: 3.5rem;
+  top: -4.5rem;
+  font-family: "Patrick Hand", cursive;
+  font-size: 2.6rem;
 }
 
 .skillSet {
@@ -273,7 +316,6 @@ header .gnb ul li:last-child a:hover {
   margin-top: 40px;
   padding-bottom: 1rem;
   box-sizing: border-box;
-  text-align: center;
 }
 .skill-text strong {
   text-align: center;
@@ -283,13 +325,18 @@ header .gnb ul li:last-child a:hover {
   margin-bottom: 20px;
 }
 .skill-text p {
-  /* border: 2px solid tomato; */
-
+  text-align: justify;
   font-weight: 300;
   font-size: 1rem;
   line-height: 1.6;
   padding-bottom: 1rem;
   box-sizing: border-box;
+}
+
+.slick-arrow,
+.slick-prev,
+.slick-next {
+  display: none !important;
 }
 
 .accordion {
@@ -332,14 +379,14 @@ header .gnb ul li:last-child a:hover {
   font-weight: 300;
   font-size: 1.1rem;
   line-height: 1.5;
-  color: #888;
+  color: var(--dark-gray);
 }
 
 .resume-btn-area {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 100px 0 200px;
+  padding: 60px 0 200px;
 }
 .resume-btn-area button {
   width: 160px;
@@ -358,7 +405,7 @@ header .gnb ul li:last-child a:hover {
 
 .resume-btn-area button a {
   font-weight: 600;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: var(--font-color-w);
 }
 
@@ -515,6 +562,65 @@ ul.workExp li a:hover span {
   opacity: 1;
 }
 
+/* section 3 */
+.contact {
+  background-color: var(--font-color-w);
+  margin-bottom: 100px;
+}
+.contact .inner {
+}
+
+.contact h5 {
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+.contact h6 {
+}
+.contact h6 a {
+  border: 2px solid red;
+
+  display: flex;
+  align-items: center;
+}
+.contact h6 a strong {
+  font-size: 7rem;
+}
+.contact h6 a img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+/* footer */
+footer {
+  background-color: var(--font-color-w);
+}
+footer .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--dark-gray);
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+footer a {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+footer a img {
+  display: block;
+  width: 100%;
+  object-fit: contain;
+}
+footer small {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* responsive */
 @media (max-width: 1300px) {
   .inner {
     max-width: 1000px;
@@ -524,8 +630,8 @@ ul.workExp li a:hover span {
     font-size: 7rem;
   }
   .visual p {
-    width: 35%;
-    margin-left: 25%;
+    width: 55%;
+    /* margin-left: 25%; */
   }
   .visual .arrow-wrap {
     width: 55px;
