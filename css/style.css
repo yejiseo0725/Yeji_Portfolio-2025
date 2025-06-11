@@ -354,12 +354,16 @@ header .gnb ul li:last-child a:hover {
   font-weight: 500;
   font-size: 1.4rem;
   letter-spacing: 0.4px;
-  padding: 25px 30px;
+  padding: 30px;
   box-sizing: border-box;
   cursor: pointer;
   border-top: 1px solid var(--font-color);
-  border-bottom: 1px solid var(--font-color);
+  /* border-bottom: 1px solid var(--font-color); */
 }
+.accordion ul li:first-child .acc-title {
+  /* border-bottom: none; */
+}
+
 .accordion ul li .acc-title span {
   width: 20px;
   height: 20px;
@@ -372,9 +376,19 @@ header .gnb ul li:last-child a:hover {
 }
 
 .accordion ul li .acc-desc {
+  display: none;
   padding: 40px 30px;
   box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
+.accordion ul li .acc-desc.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+  margin-bottom: 20px;
+}
+
 .accordion ul li .acc-desc p {
   font-weight: 300;
   font-size: 1.1rem;
@@ -565,31 +579,42 @@ ul.workExp li a:hover span {
 /* section 3 */
 .contact {
   background-color: var(--font-color-w);
-  margin-bottom: 100px;
+  margin: 80px 0 60px;
 }
 .contact .inner {
 }
 
 .contact h5 {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-weight: 400;
 }
 .contact h6 {
 }
 .contact h6 a {
-  border: 2px solid red;
-
-  display: flex;
+  display: inline-flex;
   align-items: center;
 }
 .contact h6 a strong {
   font-size: 7rem;
+  margin-right: 20px;
 }
 .contact h6 a img {
   display: block;
   width: 80px;
   height: 80px;
   object-fit: cover;
+}
+
+.contact h6 a:hover img {
+  animation: rotate360 1s linear infinite;
+}
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* footer */
