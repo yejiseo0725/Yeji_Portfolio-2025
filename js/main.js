@@ -1,3 +1,148 @@
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(".img-slider", {
+  y: "-500%", // 화면 위쪽으로 자기 높이만큼 이동 (완전히 사라짐)
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".visual", // 애니메이션 시작 기준 영역
+    start: "top top", // 스크롤 영역 시작
+    end: "+=800", // 500px 스크롤 구간 동안 애니메이션 진행
+    scrub: true, // 스크롤과 애니메이션 동기화
+  },
+});
+
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: ".visual",
+      start: "top top",
+      end: "+=1000",
+      scrub: true,
+      pin: true,
+    },
+  })
+  .to(
+    ".moon",
+    {
+      x: -400,
+      rotation: 360,
+      ease: "none",
+      duration: 0.7, // 전체 타임라인 중 80% 구간에서 이동
+    },
+    0
+  )
+  .to(
+    ".moon",
+    {
+      opacity: 0,
+      ease: "none",
+      duration: 0.3, // 나머지 20% 구간에서 사라짐
+    },
+    0.8
+  ) // 80% 지점부터 opacity 애니메이션 시작
+
+  .to(
+    ".sparkle",
+    {
+      x: 400,
+      rotation: 360,
+      ease: "none",
+      duration: 0.7,
+    },
+    0
+  )
+  .to(
+    ".sparkle",
+    {
+      opacity: 0,
+      ease: "none",
+      duration: 0.3,
+    },
+    0.8
+  )
+
+  .to(
+    ".atom",
+    {
+      x: -400,
+      rotation: 360,
+      ease: "none",
+      duration: 0.7,
+    },
+    0
+  )
+  .to(
+    ".atom",
+    {
+      opacity: 0,
+      ease: "none",
+      duration: 0.3,
+    },
+    0.8
+  );
+
+const moon = document.querySelector(".moon");
+const sparkle = document.querySelector(".sparkle");
+const atom = document.querySelector(".atom");
+
+let targetScroll = 0; // 실제 스크롤값
+let currentScroll = 0; // 현재 애니메이션에서 사용되는 값
+
+// 스크롤 이벤트로 targetScroll 업데이트
+window.addEventListener("scroll", () => {
+  targetScroll = window.scrollY;
+});
+
+// 매 프레임마다 currentScroll이 targetScroll로 부드럽게 움직임 (lerp)
+gsap.ticker.add(() => {
+  // lerp 함수 (linear interpolation)
+  currentScroll += (targetScroll - currentScroll) * 0.1; // 0.1은 부드러움 정도 (낮을수록 더 느림)
+
+  // 애니메이션에 반영
+  gsap.set(moon, {
+    x: -currentScroll / 5,
+    rotation: currentScroll / 5,
+  });
+  gsap.set(sparkle, {
+    x: currentScroll / 5,
+    rotation: currentScroll / 5,
+  });
+  gsap.set(atom, {
+    x: -currentScroll / 10,
+    rotation: currentScroll / 5,
+  });
+});
+
+function setupImageSlider(sliderEl) {
+  const imageIndexes = sliderEl.dataset.images.split(","); // ["4", "5", "6"]
+  let currentIndex = 0;
+  const inner = sliderEl.querySelector(".slider-inner");
+
+  function changeImage() {
+    currentIndex = (currentIndex + 1) % imageIndexes.length;
+    const newImg = document.createElement("img");
+    newImg.src = `./images/img${imageIndexes[currentIndex]}.jpg`;
+    newImg.alt = "yeji-pics";
+
+    // 기존 이미지 위로 밀고, 새 이미지 아래에 추가
+    inner.appendChild(newImg);
+
+    // 전환 후 처리
+    setTimeout(() => {
+      const imgs = inner.querySelectorAll("img");
+      if (imgs.length > 1) {
+        imgs[0].remove(); // 위로 밀린 기존 이미지 제거
+      }
+    }, 600); // transition과 맞춰야 함
+  }
+
+  // 매 1초마다 실행
+  setInterval(changeImage, 1000);
+}
+
+// 모든 슬라이더 설정
+document.querySelectorAll(".img-slider").forEach(setupImageSlider);
+
 $(".accordion ul li .acc-title").on("click", function () {
   const li = $(this).closest("li");
   const desc = $(this).next(".acc-desc");

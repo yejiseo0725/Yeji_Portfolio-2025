@@ -116,8 +116,8 @@ header .gnb ul li:last-child a:hover {
 
 .visual h1 span b {
   display: block;
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   margin: 2rem 1.5rem 0 1.5rem;
 }
 .visual h1 span b img {
@@ -131,18 +131,30 @@ header .gnb ul li:last-child a:hover {
   height: 80px;
 }
 
-.visual h1 span strong {
-  display: block;
-  padding: 0 2rem;
-  box-sizing: border-box;
-}
-.visual h1 span strong img {
-  display: block;
-  width: 200px;
+.img-slider {
+  display: inline-block;
+  position: relative;
+  width: 200px; /* 원하는 이미지 크기에 맞게 */
   height: 100px;
   object-fit: cover;
   border-radius: 60px;
+  margin: 0 1rem;
+  box-sizing: border-box;
   overflow: hidden;
+}
+
+.slider-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: transform 0.6s ease;
+}
+
+.slider-inner img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .visual .visual-text {
@@ -153,8 +165,8 @@ header .gnb ul li:last-child a:hover {
 }
 .visual .visual-text b {
   display: block;
-  width: 70px;
-  height: 70px;
+  width: 90px;
+  height: 90px;
   margin-right: 1.5rem;
 }
 .visual .visual-text b img {
@@ -429,7 +441,7 @@ header .gnb ul li:last-child a:hover {
 .sc2 {
   box-sizing: border-box;
   background-color: var(--main-color);
-  padding: 200px 0 140px;
+  padding: 200px 0 80px;
   /* border-bottom-left-radius: 80px; */
   /* border-bottom-right-radius: 80px; */
 }
