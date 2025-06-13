@@ -1,16 +1,18 @@
 gsap.registerPlugin(ScrollTrigger);
 
+// visual img 위로 올라가게
 gsap.to(".img-slider", {
-  y: "-500%", // 화면 위쪽으로 자기 높이만큼 이동 (완전히 사라짐)
+  y: "-500%", // 화면 위쪽으로 자기 높이만큼 이동
   ease: "none",
   scrollTrigger: {
     trigger: ".visual", // 애니메이션 시작 기준 영역
     start: "top top", // 스크롤 영역 시작
-    end: "+=800", // 500px 스크롤 구간 동안 애니메이션 진행
+    end: "+=800", // 이 스크롤 구간 동안 애니메이션 진행
     scrub: true, // 스크롤과 애니메이션 동기화
   },
 });
 
+// visual svg 이동 + 회전 + fadeOut
 gsap
   .timeline({
     scrollTrigger: {
@@ -27,7 +29,7 @@ gsap
       x: -400,
       rotation: 360,
       ease: "none",
-      duration: 0.7, // 전체 타임라인 중 80% 구간에서 이동
+      duration: 0.7, // 전체 타임라인 중 70% 구간
     },
     0
   )
@@ -36,10 +38,10 @@ gsap
     {
       opacity: 0,
       ease: "none",
-      duration: 0.3, // 나머지 20% 구간에서 사라짐
+      duration: 0.3, // 나머지 30% 구간에서 사라짐
     },
     0.8
-  ) // 80% 지점부터 opacity 애니메이션 시작
+  )
 
   .to(
     ".sparkle",
@@ -81,6 +83,7 @@ gsap
     0.8
   );
 
+// 스크롤에 따라 이동하는 visual svg 애니메이션
 const moon = document.querySelector(".moon");
 const sparkle = document.querySelector(".sparkle");
 const atom = document.querySelector(".atom");
@@ -113,6 +116,7 @@ gsap.ticker.add(() => {
   });
 });
 
+// visual img 1초마다 변경ㄴ
 function setupImageSlider(sliderEl) {
   const imageIndexes = sliderEl.dataset.images.split(","); // ["4", "5", "6"]
   let currentIndex = 0;
@@ -160,6 +164,19 @@ $(".accordion ul li .acc-title").on("click", function () {
       li.addClass("open");
     });
   }
+});
+
+// white-section 을 만나면 색이 변하는 header
+document.querySelectorAll(".white-section").forEach((section) => {
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top 10%",
+    end: "bottom 10%",
+    onEnter: () => document.body.classList.add("light-header"),
+    onEnterBack: () => document.body.classList.add("light-header"),
+    onLeave: () => document.body.classList.remove("light-header"),
+    onLeaveBack: () => document.body.classList.remove("light-header"),
+  });
 });
 
 $(function () {

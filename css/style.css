@@ -74,6 +74,19 @@ header .gnb ul li:last-child a:hover {
   transition: 0.2s;
 }
 
+/* light-header 상태: 흰 배경에 대비되는 메인 컬러로 전환 */
+body.light-header header .gnb a,
+body.light-header header .gnb ul li a {
+  color: var(--main-color);
+}
+body.light-header header .gnb ul li:last-child {
+  border-color: var(--main-color);
+}
+body.light-header header .gnb ul li:last-child a:hover {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
 /* visual */
 .visual {
   position: relative;
