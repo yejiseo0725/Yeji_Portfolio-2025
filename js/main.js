@@ -26,7 +26,7 @@ gsap
   .to(
     ".moon",
     {
-      x: -400,
+      x: -600,
       rotation: 360,
       ease: "none",
       duration: 0.7, // 전체 타임라인 중 70% 구간
@@ -46,7 +46,7 @@ gsap
   .to(
     ".sparkle",
     {
-      x: 400,
+      x: 600,
       rotation: 360,
       ease: "none",
       duration: 0.7,
@@ -66,7 +66,7 @@ gsap
   .to(
     ".atom",
     {
-      x: -400,
+      x: -600,
       rotation: 360,
       ease: "none",
       duration: 0.7,
