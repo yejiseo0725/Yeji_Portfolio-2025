@@ -2,7 +2,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // visual img 위로 올라가게
 gsap.to(".img-slider", {
-  y: "-500%", // 화면 위쪽으로 자기 높이만큼 이동
+  y: "-1000%", // 화면 위쪽으로 자기 높이만큼 이동
   ease: "none",
   scrollTrigger: {
     trigger: ".visual", // 애니메이션 시작 기준 영역
@@ -18,7 +18,7 @@ gsap
     scrollTrigger: {
       trigger: ".visual",
       start: "top top",
-      end: "+=1000",
+      end: "+=1600",
       scrub: true,
       pin: true,
     },
@@ -26,10 +26,10 @@ gsap
   .to(
     ".moon",
     {
-      x: -600,
+      x: -1000,
       rotation: 360,
       ease: "none",
-      duration: 0.7, // 전체 타임라인 중 70% 구간
+      duration: 0.9, // 전체 타임라인 중 70% 구간
     },
     0
   )
@@ -38,7 +38,7 @@ gsap
     {
       opacity: 0,
       ease: "none",
-      duration: 0.3, // 나머지 30% 구간에서 사라짐
+      duration: 0.1, // 나머지 30% 구간에서 사라짐
     },
     0.8
   )
@@ -46,10 +46,10 @@ gsap
   .to(
     ".sparkle",
     {
-      x: 600,
+      x: 1000,
       rotation: 360,
       ease: "none",
-      duration: 0.7,
+      duration: 0.9,
     },
     0
   )
@@ -58,7 +58,7 @@ gsap
     {
       opacity: 0,
       ease: "none",
-      duration: 0.3,
+      duration: 0.1,
     },
     0.8
   )
@@ -66,10 +66,10 @@ gsap
   .to(
     ".atom",
     {
-      x: -600,
+      x: -1000,
       rotation: 360,
       ease: "none",
-      duration: 0.7,
+      duration: 0.9,
     },
     0
   )
@@ -78,7 +78,7 @@ gsap
     {
       opacity: 0,
       ease: "none",
-      duration: 0.3,
+      duration: 0.1,
     },
     0.8
   );
@@ -116,7 +116,7 @@ gsap.ticker.add(() => {
   });
 });
 
-// visual img 1초마다 변경ㄴ
+// visual img 1초마다 변경
 function setupImageSlider(sliderEl) {
   const imageIndexes = sliderEl.dataset.images.split(","); // ["4", "5", "6"]
   let currentIndex = 0;
@@ -199,4 +199,42 @@ $(function () {
       },
     ],
   });
+});
+
+$(function () {
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".sc2",
+        start: "0% 100%",
+        end: "0% 20%",
+        scrub: 1,
+        markers: true,
+      },
+    })
+
+    .fromTo(
+      ".sc2 h3 .a",
+      {
+        x: "-100%",
+      },
+      {
+        x: "0%",
+        ease: "none",
+        duration: 5,
+      },
+      0
+    )
+    .fromTo(
+      ".sc2 h3 .b",
+      {
+        x: "100%",
+      },
+      {
+        x: "0%",
+        ease: "none",
+        duration: 5,
+      },
+      0
+    );
 });
