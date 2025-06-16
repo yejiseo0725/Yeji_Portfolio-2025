@@ -4,11 +4,15 @@
   color: var(--font-color);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   position: relative;
   font-size: 16px;
   overflow-x: hidden;
-  /* overflow: hidden; */
+  scroll-behavior: smooth;
 }
 
 .inner {
@@ -116,14 +120,15 @@ body.light-header header .gnb ul li:last-child a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--font-color-w);
 }
 
-.visual h1 span.title {
+.visual h1 span.title em {
   font-weight: 300;
   font-size: 10rem;
+  font-style: normal;
+  color: var(--font-color-w);
 }
-.visual h1 span.title-2 {
+.visual h1 span.title-2 em {
   font-weight: 400;
 }
 
@@ -137,11 +142,39 @@ body.light-header header .gnb ul li:last-child a:hover {
   display: block;
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
-.visual h1 span:first-child b {
-  width: 80px;
-  height: 80px;
+/* 초기 진입 애니메이션을 위한 클래스 */
+.visual h1 span b {
+  transform: scale(0.2);
+  transition: transform 1.5s ease;
+}
+.visual.animate-in h1 span b {
+  transform: scale(1);
+}
+
+.visual .visual-text b {
+  transform: scale(0.2);
+  transition: transform 1.5s ease;
+}
+.visual.animate-in .visual-text b {
+  transform: scale(1);
+}
+
+.visual h1 span.title em {
+  transform: scale(0.5) skewX(-20deg);
+  opacity: 0;
+  transition: transform 1s ease, opacity 1s ease;
+  transform-origin: center;
+}
+.visual.animate-in h1 span.title em {
+  transform: scale(1) skewX(0);
+  opacity: 1;
+}
+
+.visual.animate-in h1 span.title em {
+  transition-delay: 0.3s;
 }
 
 .img-slider {
@@ -154,6 +187,7 @@ body.light-header header .gnb ul li:last-child a:hover {
   margin: 0 1rem;
   box-sizing: border-box;
   overflow: hidden;
+  transition: transform 1.5s ease;
 }
 
 .slider-inner {
@@ -161,6 +195,7 @@ body.light-header header .gnb ul li:last-child a:hover {
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   transition: transform 0.6s ease;
 }
 
@@ -168,6 +203,7 @@ body.light-header header .gnb ul li:last-child a:hover {
   display: block;
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .visual .visual-text {
@@ -178,8 +214,8 @@ body.light-header header .gnb ul li:last-child a:hover {
 }
 .visual .visual-text b {
   display: block;
-  width: 90px;
-  height: 90px;
+  width: 110px;
+  height: 110px;
   margin-right: 1.5rem;
 }
 .visual .visual-text b img {
@@ -194,6 +230,14 @@ body.light-header header .gnb ul li:last-child a:hover {
   line-height: 1.5;
   font-size: 0.9rem;
   color: var(--font-color-w);
+
+  opacity: 0;
+  transform: translateY(70px) skewX(40deg);
+  transition: 1.2s ease;
+}
+.visual.animate-in p {
+  opacity: 1;
+  transform: translateY(0) skewX(0);
 }
 
 .visual .arrow-wrap {
@@ -225,10 +269,14 @@ body.light-header header .gnb ul li:last-child a:hover {
 
 /* section 1 */
 .sc1 {
+  /* margin-top: 100px; */
   box-sizing: border-box;
   background-color: var(--font-color-w);
+
+  /* border: 2px solid tomato; */
 }
 .sc1 .inner {
+  /* border: 2px solid teal; */
 }
 
 .sc1 .my-pic {
@@ -455,8 +503,6 @@ body.light-header header .gnb ul li:last-child a:hover {
   box-sizing: border-box;
   background-color: var(--main-color);
   padding: 200px 0 80px;
-  /* border-bottom-left-radius: 80px; */
-  /* border-bottom-right-radius: 80px; */
 }
 
 .pj-cat {
@@ -507,14 +553,48 @@ ul.workList li a {
   display: inline-block;
   color: var(--font-color-w);
 }
+ul.workList li a.workImg::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  object-fit: cover;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: url(../images/asset/sparkle.svg) no-repeat center/150px;
+  z-index: 1;
+  animation: spin 1.5s infinite linear;
+  transition: 0.3s;
+}
+
+/* li hover */
+ul.workList li a.workImg:hover img {
+  filter: brightness(40%);
+}
+ul.workList li a.workImg:hover::after {
+  width: 150px;
+  height: 150px;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
 
 ul.workList li .img-box {
+  position: relative;
   width: 65%;
   height: 600px;
   object-fit: cover;
   padding: 40px;
   box-sizing: border-box;
 }
+
 ul.workList li .img-box a {
   display: block;
   margin: 0 auto;
@@ -575,6 +655,7 @@ ul.workList li .text-box a p {
 }
 
 ul.workExp {
+  margin-bottom: 400px;
 }
 ul.workExp li {
 }

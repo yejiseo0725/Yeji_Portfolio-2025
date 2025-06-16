@@ -1,3 +1,10 @@
+window.addEventListener("DOMContentLoaded", () => {
+  // 약간의 시간차를 두고 애니메이션 클래스 추가
+  setTimeout(() => {
+    document.querySelector(".visual")?.classList.add("animate-in");
+  }, 100); // DOM 로드 직후 약간의 지연
+});
+
 gsap.registerPlugin(ScrollTrigger);
 
 // visual img 위로 올라가게
