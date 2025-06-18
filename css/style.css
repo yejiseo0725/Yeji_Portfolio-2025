@@ -292,11 +292,10 @@ body.light-header header .gnb ul li:last-child a:hover {
 }
 
 .sc1 .inner {
-  /* border: 2px solid teal; */
 }
 
 .sc1 .my-pic {
-  padding: 100px 0 60px;
+  padding: 200px 0 60px;
   box-sizing: border-box;
 }
 .sc1 .my-pic strong {
