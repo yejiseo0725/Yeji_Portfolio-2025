@@ -124,7 +124,7 @@ body.light-header header .gnb ul li:last-child a:hover {
 
 .visual h1 span.title em {
   font-weight: 300;
-  font-size: 10rem;
+  font-size: 7rem;
   font-style: normal;
   color: var(--font-color-w);
 }
@@ -134,8 +134,8 @@ body.light-header header .gnb ul li:last-child a:hover {
 
 .visual h1 span b {
   display: block;
-  width: 110px;
-  height: 110px;
+  width: 100px;
+  height: 100px;
   margin: 2rem 1.5rem 0 1.5rem;
 }
 .visual h1 span b img {
@@ -214,8 +214,8 @@ body.light-header header .gnb ul li:last-child a:hover {
 }
 .visual .visual-text b {
   display: block;
-  width: 110px;
-  height: 110px;
+  width: 100px;
+  height: 100px;
   margin-right: 1.5rem;
 }
 .visual .visual-text b img {
@@ -272,15 +272,31 @@ body.light-header header .gnb ul li:last-child a:hover {
   /* margin-top: 100px; */
   box-sizing: border-box;
   background-color: var(--font-color-w);
-
-  /* border: 2px solid tomato; */
+  position: relative;
+  margin-top: 300px;
 }
+
+.half-circle-wrap {
+  position: absolute;
+  left: 0;
+  top: -300px;
+  width: 100%;
+  background-color: var(--main-color);
+  padding-top: 100px;
+}
+.half-circle {
+  width: 100%;
+  height: 300px;
+  margin: 0 auto;
+  background-color: var(--font-color-w);
+}
+
 .sc1 .inner {
   /* border: 2px solid teal; */
 }
 
 .sc1 .my-pic {
-  padding: 240px 0 60px;
+  padding: 100px 0 60px;
   box-sizing: border-box;
 }
 .sc1 .my-pic strong {

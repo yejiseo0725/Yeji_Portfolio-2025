@@ -186,6 +186,34 @@ document.querySelectorAll(".white-section").forEach((section) => {
   });
 });
 
+// sc1 펼쳐지며 등장
+$(function () {
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".sc1",
+        start: "top bottom",
+        end: "top 80%",
+        scrub: 1,
+        markers: true,
+      },
+    })
+    .fromTo(
+      ".half-circle",
+      {
+        scale: 0.3,
+        borderRadius: "50%",
+        transformOrigin: "center top",
+      },
+      {
+        scale: 1,
+        borderBottomLeftRadius: "0%",
+        borderBottomRightRadius: "0%",
+        ease: "power2.out",
+      }
+    );
+});
+
 $(function () {
   $(".my-skill").slick({
     centerMode: true,
@@ -216,7 +244,7 @@ $(function () {
         start: "0% 100%",
         end: "0% 20%",
         scrub: 1,
-        markers: true,
+        // markers: true,
       },
     })
 
