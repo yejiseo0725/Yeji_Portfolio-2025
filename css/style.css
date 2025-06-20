@@ -487,6 +487,7 @@ body.light-header header .gnb ul li:last-child a:hover {
 }
 
 .accordion ul li .acc-title {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -497,10 +498,28 @@ body.light-header header .gnb ul li:last-child a:hover {
   box-sizing: border-box;
   cursor: pointer;
   border-top: 1px solid var(--font-color);
-  /* border-bottom: 1px solid var(--font-color); */
 }
-.accordion ul li:first-child .acc-title {
-  /* border-bottom: none; */
+
+.accordion ul li .acc-title strong {
+  position: relative;
+}
+.accordion ul li .acc-title strong::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: 10%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--font-color);
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.3s ease;
+}
+
+.accordion ul li .acc-title:hover strong::after {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .accordion ul li .acc-title span {
@@ -528,11 +547,27 @@ body.light-header header .gnb ul li:last-child a:hover {
   margin-bottom: 20px;
 }
 
+.accordion ul li .acc-desc .ex-wrap {
+  margin-bottom: 20px;
+}
+.accordion ul li .acc-desc strong {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+.accordion ul li .acc-desc strong span {
+  font-weight: 400;
+  color: var(--dark-gray);
+}
+
 .accordion ul li .acc-desc p {
   font-weight: 300;
   font-size: 1.1rem;
-  line-height: 1.5;
-  color: var(--dark-gray);
+  line-height: 1.8;
+  color: var(--font-color);
+  padding-bottom: 5px;
 }
 
 .resume-btn-area {
