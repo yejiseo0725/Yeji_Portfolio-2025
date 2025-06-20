@@ -1,11 +1,22 @@
+$(function () {
+  Splitting();
+});
+
+$(function () {
+  $(".animate").scrolla({
+    mobile: true,
+    once: false,
+  });
+});
+
+gsap.registerPlugin(ScrollTrigger);
+
 window.addEventListener("DOMContentLoaded", () => {
   // 약간의 시간차를 두고 애니메이션 클래스 추가
   setTimeout(() => {
     document.querySelector(".visual")?.classList.add("animate-in");
   }, 100); // DOM 로드 직후 약간의 지연
 });
-
-gsap.registerPlugin(ScrollTrigger);
 
 // visual img 위로 올라가게
 gsap.to(".img-slider", {
@@ -186,33 +197,52 @@ document.querySelectorAll(".white-section").forEach((section) => {
   });
 });
 
-// sc1 펼쳐지며 등장
 $(function () {
-  gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: ".sc1",
-        start: "top bottom",
-        end: "top 80%",
-        scrub: 1,
-        markers: true,
-      },
-    })
-    .fromTo(
-      ".half-circle",
-      {
-        scale: 0.3,
-        borderRadius: "50%",
-        transformOrigin: "center top",
-      },
-      {
-        scale: 1,
-        borderBottomLeftRadius: "0%",
-        borderBottomRightRadius: "0%",
-        ease: "power2.out",
-      }
-    );
+  // 1. half-circle-wrap 이동
+  gsap.to(".half-circle-wrap", {
+    top: "-300px",
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".sc1",
+      start: "top 80%",
+      end: "top 70%",
+      scrub: 1,
+      // markers: true,
+    },
+  });
+
+  // 2. 반원 → 직선 변화 (border-radius 줄이기)
+  gsap.to(".half-circle", {
+    borderTopLeftRadius: "0%",
+    borderTopRightRadius: "0%",
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".sc1",
+      start: "top 80%",
+      end: "top 70%",
+      scrub: 1,
+      // markers: true, // 필요 시 켜기
+    },
+  });
 });
+
+gsap.fromTo(
+  ".sc1 .my-info span",
+  {
+    "background-size": "0% 100%",
+  },
+  {
+    "background-size": "100% 100%",
+    scrollTrigger: {
+      trigger: ".sc1 .my-info",
+      pinnedContainer: ".sc1 .my-info",
+      start: "40% 90%",
+      end: "70% 100%",
+      // markers: true,
+      scrub: 3,
+    },
+  }
+);
 
 $(function () {
   $(".my-skill").slick({

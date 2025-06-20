@@ -86,7 +86,13 @@
   --font-color: #333;
   --font-color-w: #fff;
   --main-color: #001429;
+  --yellow: #ffdb58;
   --dark-gray: #888;
+}
+
+::selection {
+  background-color: var(--yellow);
+  color: var(--font-color);
 }
 
 .en {
