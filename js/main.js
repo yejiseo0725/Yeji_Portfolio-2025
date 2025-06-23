@@ -272,11 +272,50 @@ $(function () {
       scrollTrigger: {
         trigger: ".sc2",
         start: "0% 100%",
-        end: "0% 20%",
+        end: "0% 0%",
         scrub: 1,
-        // markers: true,
+        markers: true,
       },
     })
+
+    .to(
+      ".sc2",
+      {
+        backgroundColor: "var(--main-color)",
+        color: "var(--font-color-w)",
+        ease: "none",
+        duration: 5,
+      },
+      0
+    )
+    .to(
+      ".pj-cat",
+      {
+        color: "var(--font-color-w)",
+        borderBottom: "1px solid var(--font-color-w)",
+        ease: "none",
+        duration: 5,
+      },
+      0
+    )
+    .to(
+      ".pj-cat strong",
+      {
+        color: "var(--font-color-w)",
+        ease: "none",
+        duration: 5,
+      },
+      0
+    )
+    .to(
+      ".h3-wrap h3 span",
+      {
+        color: "var(--font-color-w)",
+        ease: "none",
+        duration: 5,
+      },
+      0
+    )
 
     .fromTo(
       ".sc2 h3 .a",

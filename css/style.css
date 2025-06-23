@@ -632,21 +632,21 @@ body.light-header header .gnb ul li:last-child a:hover {
 /* section 2 */
 .sc2 {
   box-sizing: border-box;
-  background-color: var(--main-color);
+  background-color: var(--font-color-w);
   padding: 200px 0 80px;
 }
 
 .pj-cat {
   padding: 20px 0;
   box-sizing: border-box;
-  border-bottom: 1px solid var(--font-color-w);
+  border-bottom: 1px solid var(--main-color);
   margin-bottom: 80px;
 }
 .pj-cat strong {
   font-weight: 500;
   font-size: 0.9rem;
   letter-spacing: 1px;
-  color: var(--font-color-w);
+  color: var(--main-color);
 }
 
 .h3-wrap {
@@ -771,7 +771,9 @@ ul.workList li .text-box a em {
   display: inline-block;
   font-style: normal;
   font-weight: 600;
-  background-color: var(--font-color-w);
+  background-color: transparent;
+  color: var(--font-color-w);
+  border: 1px solid var(--font-color-w);
   border-radius: 20px;
   padding: 6px 12px;
   box-sizing: border-box;
@@ -872,7 +874,7 @@ ul.workExp li a:hover span {
   margin-right: 20px;
   font-weight: 300;
   font-size: 2.2rem;
-  color: var(--font-color);
+  color: var(--main-color);
   display: inline-block;
 }
 
