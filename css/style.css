@@ -580,7 +580,8 @@ body.light-header header .gnb ul li:last-child a:hover {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  background-color: #001429;
+  background-color: var(--yellow);
+
   border: none;
   transform: rotate(-18deg);
   cursor: pointer;
@@ -594,7 +595,7 @@ body.light-header header .gnb ul li:last-child a:hover {
 .resume-btn-area button a {
   font-weight: 600;
   font-size: 1.5rem;
-  color: var(--font-color-w);
+  color: var(--font-color);
   overflow: hidden;
 }
 
@@ -612,7 +613,7 @@ body.light-header header .gnb ul li:last-child a:hover {
   top: 0;
   left: 0;
   opacity: 1;
-  color: var(--font-color-w);
+  color: var(--font-color);
   content: attr(data-char);
   transition: transform 0.35s;
   transition-delay: calc(30ms * var(--char-index));
@@ -623,7 +624,7 @@ body.light-header header .gnb ul li:last-child a:hover {
 .resume-btn-area button:hover .char::before {
   transform: translateY(0);
   opacity: 1;
-  color: var(--font-color-w);
+  color: var(--font-color);
 }
 .resume-btn-area button:hover .char::after {
   transform: translateY(-100%);
@@ -892,7 +893,9 @@ ul.workExp li a:hover span {
 /* section 3 */
 .contact {
   background-color: var(--yellow);
-  padding: 80px 0 60px;
+  padding: 100px 0 60px;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
 }
 .contact .inner {
 }
@@ -902,6 +905,7 @@ ul.workExp li a:hover span {
   font-weight: 400;
 }
 .contact h6 {
+  margin-top: 7px;
 }
 .contact h6 a {
   display: inline-flex;
@@ -938,8 +942,7 @@ footer .inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid var(--font-color);
-  padding: 20px 0;
+  padding: 40px 0 20px;
   box-sizing: border-box;
 }
 
