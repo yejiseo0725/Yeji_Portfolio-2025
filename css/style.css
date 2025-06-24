@@ -631,9 +631,12 @@ body.light-header header .gnb ul li:last-child a:hover {
 
 /* section 2 */
 .sc2 {
+  position: relative;
   box-sizing: border-box;
   background-color: var(--font-color-w);
-  padding: 200px 0 80px;
+  padding: 200px 0 100px;
+}
+.sc2 .inner {
 }
 
 .pj-cat {
@@ -788,7 +791,7 @@ ul.workList li .text-box a p {
 }
 
 ul.workExp {
-  margin-bottom: 400px;
+  margin-bottom: 200px;
 }
 ul.workExp li {
 }
@@ -820,7 +823,6 @@ ul.workExp li a:hover span {
 .marquee-wrap {
   overflow: hidden;
   white-space: nowrap;
-  margin-top: 160px;
   border-top: 1px solid var(--font-color-w);
   border-bottom: 1px solid var(--font-color-w);
 }
@@ -889,7 +891,7 @@ ul.workExp li a:hover span {
 
 /* section 3 */
 .contact {
-  background-color: var(--font-color-w);
+  background-color: var(--yellow);
   padding: 80px 0 60px;
 }
 .contact .inner {
@@ -930,13 +932,13 @@ ul.workExp li a:hover span {
 
 /* footer */
 footer {
-  background-color: var(--font-color-w);
+  background-color: var(--yellow);
 }
 footer .inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid var(--dark-gray);
+  border-top: 1px solid var(--font-color);
   padding: 20px 0;
   box-sizing: border-box;
 }
