@@ -342,3 +342,27 @@ $(function () {
       0
     );
 });
+
+$(function () {
+  // sc2 workList: hover img
+  let listBox = document.querySelectorAll(".sc2 ul.workExp li");
+  let imgBox = document.querySelector(".sc2 .imgBox");
+  let img = document.querySelector(".sc2 .imgBox img");
+
+  for (let i = 0; i < listBox.length; i++) {
+    listBox[i].addEventListener("mouseover", () => {
+      img.src = `./images/img${i}.jpg`;
+      gsap.set(imgBox, { scale: 0, opacity: 0, duration: 0.3 }),
+        gsap.to(imgBox, { scale: 1, opacity: 1, duration: 0.3 });
+    });
+    listBox[i].addEventListener("mousemove", (e) => {
+      let imgBoxX = e.pageX + 20;
+      let imgBoxY = e.pageY - 20;
+      imgBox.style.left = imgBoxX + "px";
+      imgBox.style.top = imgBoxY + "px";
+    });
+    listBox[i].addEventListener("mouseout", () => {
+      gsap.to(imgBox, { scale: 0, opacity: 0, duration: 0.3 });
+    });
+  }
+});

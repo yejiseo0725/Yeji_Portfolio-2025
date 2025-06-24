@@ -821,6 +821,17 @@ ul.workExp li a:hover span {
   opacity: 1;
 }
 
+.sc2 .imgBox {
+  position: absolute;
+  z-index: 50;
+  transform: scale(0);
+  opacity: 0;
+}
+/* 이 구간에서만 img hover scroll 없애기 */
+.wrap.on {
+  overflow: hidden;
+}
+
 .marquee-wrap {
   overflow: hidden;
   white-space: nowrap;
