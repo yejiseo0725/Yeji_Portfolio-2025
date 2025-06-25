@@ -799,6 +799,7 @@ ul.workExp li {
 
 ul.workExp li a {
   display: block;
+  margin-bottom: 5px;
 }
 ul.workExp li:nth-child(even) {
   text-align: end;
@@ -809,7 +810,15 @@ ul.workExp li a h4 {
   font-size: 6rem;
   line-height: 1.1;
   color: var(--font-color-w);
+  transition: transform 0.3s ease;
 }
+ul.workExp li:nth-child(odd):hover h4 {
+  transform: translateX(20px);
+}
+ul.workExp li:nth-child(even):hover h4 {
+  transform: translateX(-20px);
+}
+
 ul.workExp li a span {
   font-weight: 400;
   font-size: 1.1rem;
@@ -822,10 +831,21 @@ ul.workExp li a:hover span {
 }
 
 .sc2 .imgBox {
-  position: absolute;
-  z-index: 50;
+  position: fixed; /* 화면 기준으로 따라다니게 */
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: auto;
+  z-index: 99;
+  pointer-events: none;
   transform: scale(0);
   opacity: 0;
+}
+.sc2 .imgBox img {
+  display: block;
+  width: 400px;
+  height: auto;
+  object-fit: cover;
 }
 /* 이 구간에서만 img hover scroll 없애기 */
 .wrap.on {
