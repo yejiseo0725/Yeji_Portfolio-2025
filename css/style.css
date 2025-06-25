@@ -939,9 +939,24 @@ ul.workExp li a:hover span {
   margin-top: 7px;
 }
 .contact h6 a {
+  position: relative;
   display: inline-flex;
   align-items: center;
 }
+.contact h6 a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--font-color);
+  transition: width 0.4s ease-in-out;
+}
+.contact h6 a:hover::after {
+  width: 100%;
+}
+
 .contact h6 a strong {
   font-size: 7rem;
   margin-right: 20px;
