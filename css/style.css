@@ -6,6 +6,8 @@
 
 html {
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -14,6 +16,8 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
   background-color: var(--main-color);
+  margin: 0;
+  padding: 0;
 }
 
 .inner {
@@ -919,6 +923,13 @@ ul.workExp li a:hover span {
   100% {
     transform: translateX(-50%);
   }
+}
+
+.contact-footer-wrap {
+  transform: translateY(0);
+  opacity: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 /* section 3 */

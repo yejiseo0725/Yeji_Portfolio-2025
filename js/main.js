@@ -371,3 +371,20 @@ $(function () {
     });
   }
 });
+
+$(function () {
+  gsap.set(".contact-footer-wrap", { y: 100, opacity: 0 }); // ✅ 초기 상태는 JS에서만 설정
+
+  gsap.to(".contact-footer-wrap", {
+    scrollTrigger: {
+      trigger: ".contact-footer-wrap",
+      start: "top 85%",
+      toggleActions: "play reverse play reverse",
+      markers: true,
+    },
+    y: 0, // 본래 자리로 이동
+    opacity: 1,
+    duration: 1.5,
+    ease: "power3.out",
+  });
+});
