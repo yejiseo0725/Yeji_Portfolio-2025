@@ -258,7 +258,7 @@ body.light-header header .gnb ul li:last-child a:hover {
 
   opacity: 0;
   transform: translateY(70px) skewX(40deg);
-  transition: 1.2s ease;
+  transition: 1.5s ease;
 }
 .visual.animate-in p {
   opacity: 1;
@@ -587,7 +587,7 @@ body.light-header header .gnb ul li:last-child a:hover {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  background-color: var(--yellow);
+  background-color: var(--blue);
 
   border: none;
   transform: rotate(-18deg);
@@ -602,7 +602,7 @@ body.light-header header .gnb ul li:last-child a:hover {
 .resume-btn-area button a {
   font-weight: 600;
   font-size: 1.5rem;
-  color: var(--font-color);
+  color: var(--font-color-w);
   overflow: hidden;
 }
 
@@ -620,7 +620,7 @@ body.light-header header .gnb ul li:last-child a:hover {
   top: 0;
   left: 0;
   opacity: 1;
-  color: var(--font-color);
+  color: var(--font-color-w);
   content: attr(data-char);
   transition: transform 0.35s;
   transition-delay: calc(30ms * var(--char-index));
@@ -631,7 +631,7 @@ body.light-header header .gnb ul li:last-child a:hover {
 .resume-btn-area button:hover .char::before {
   transform: translateY(0);
   opacity: 1;
-  color: var(--font-color);
+  color: var(--font-color-w);
 }
 .resume-btn-area button:hover .char::after {
   transform: translateY(-100%);
@@ -736,7 +736,6 @@ ul.workList li .img-box {
   padding: 40px;
   box-sizing: border-box;
 }
-
 ul.workList li .img-box a {
   display: block;
   margin: 0 auto;
@@ -744,7 +743,25 @@ ul.workList li .img-box a {
   height: 100%;
   border-radius: 60px;
   overflow: hidden;
+
+  border: 2px solid tomato;
 }
+ul.workList.motion li .img-box {
+  transform: translate3d(0, 0, 0);
+}
+ul.workList.motion li .img-box a {
+  animation: picAni 1.3s;
+}
+@keyframes picAni {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0%;
+    transform: translate3d(0, 70px, 0);
+  }
+}
+
 ul.workList li .img-box a img {
   width: 100%;
   height: 100%;
@@ -947,7 +964,7 @@ ul.workExp li a:hover span {
 
 /* section 3 */
 .contact {
-  background-color: var(--yellow);
+  background-color: var(--blue);
   padding: 100px 0 60px;
   border-top-left-radius: 80px;
   border-top-right-radius: 80px;
@@ -958,6 +975,7 @@ ul.workExp li a:hover span {
 .contact h5 {
   font-size: 1.5rem;
   font-weight: 400;
+  color: var(--font-color-w);
 }
 .contact h6 {
   margin-top: 7px;
@@ -974,7 +992,7 @@ ul.workExp li a:hover span {
   bottom: 0;
   width: 0;
   height: 2px;
-  background-color: var(--font-color);
+  background-color: var(--font-color-w);
   transition: width 0.4s ease-in-out;
 }
 .contact h6 a:hover::after {
@@ -984,6 +1002,7 @@ ul.workExp li a:hover span {
 .contact h6 a strong {
   font-size: 7rem;
   margin-right: 20px;
+  color: var(--font-color-w);
 }
 .contact h6 a img {
   display: block;
@@ -1006,7 +1025,7 @@ ul.workExp li a:hover span {
 
 /* footer */
 footer {
-  background-color: var(--yellow);
+  background-color: var(--blue);
 }
 footer .inner {
   display: flex;
@@ -1029,6 +1048,7 @@ footer a img {
 footer small {
   font-size: 0.9rem;
   font-weight: 500;
+  color: var(--font-color-w);
 }
 
 /* responsive */
