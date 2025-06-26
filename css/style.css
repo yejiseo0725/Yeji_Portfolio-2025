@@ -926,10 +926,13 @@ ul.workExp li a:hover span {
 }
 
 .contact-footer-wrap {
-  transform: translateY(0);
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+
+  overflow-y: hidden;
   opacity: 0;
-  padding-bottom: 0;
-  margin-bottom: 0;
+  border: 2px solid teal;
 }
 
 /* section 3 */

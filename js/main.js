@@ -373,12 +373,12 @@ $(function () {
 });
 
 $(function () {
-  gsap.set(".contact-footer-wrap", { y: 100, opacity: 0 }); // ✅ 초기 상태는 JS에서만 설정
+  gsap.set(".contact-footer-wrap", { y: 50, opacity: 0 }); // ✅ 초기 상태는 JS에서만 설정
 
   gsap.to(".contact-footer-wrap", {
     scrollTrigger: {
       trigger: ".contact-footer-wrap",
-      start: "top 85%",
+      start: "top 80%",
       toggleActions: "play reverse play reverse",
       markers: true,
     },
