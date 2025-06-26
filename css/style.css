@@ -925,14 +925,20 @@ ul.workExp li a:hover span {
   }
 }
 
+.footer-section {
+  position: relative;
+  height: 480px;
+  bottom: 0;
+  overflow: hidden;
+}
+
 .contact-footer-wrap {
   position: absolute;
-  width: 100%;
   bottom: 0;
-
-  overflow-y: hidden;
-  opacity: 0;
-  border: 2px solid teal;
+  left: 0;
+  width: 100%;
+  transform: translateY(150px);
+  opacity: 1;
 }
 
 /* section 3 */
