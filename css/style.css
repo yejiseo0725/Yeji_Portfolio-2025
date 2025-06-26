@@ -938,6 +938,7 @@ ul.workExp li a:hover span {
   left: 0;
   width: 100%;
   transform: translateY(150px);
+  will-change: transform, opacity;
   opacity: 1;
 }
 

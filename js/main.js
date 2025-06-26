@@ -380,8 +380,8 @@ $(function () {
     ease: "power3.out",
     scrollTrigger: {
       trigger: ".contact-footer-wrap",
-      start: "top 90%",
-      end: "top 50%",
+      start: "top 80%",
+      end: "top 70%",
       scrub: 1,
     },
   });
