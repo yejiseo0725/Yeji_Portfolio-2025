@@ -184,6 +184,19 @@ $(".accordion ul li .acc-title").on("click", function () {
   }
 });
 
+// header 천천히 위 -> 아래 등장
+$(function () {
+  gsap.set("header", { y: -100, opacity: 0 }); // 초기 상태: 위로 올라가 있고 안 보임
+
+  gsap.to("header", {
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    delay: 0.8,
+    ease: "power3.out",
+  });
+});
+
 // white-section 을 만나면 색이 변하는 header
 document.querySelectorAll(".white-section").forEach((section) => {
   ScrollTrigger.create({

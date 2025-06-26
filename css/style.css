@@ -31,8 +31,11 @@ body {
 /* header */
 header {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   z-index: 100;
+  will-change: transfrom, opacity;
 }
 header .inner {
   padding: 15px 2rem;
