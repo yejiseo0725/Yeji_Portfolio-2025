@@ -356,6 +356,36 @@ $(function () {
     );
 });
 
+// workList GSAP
+$(function () {
+  gsap.utils.toArray(".img-box").forEach(function (imgBox) {
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: imgBox,
+        start: "50% 80%",
+        end: "100% 0%",
+        toggleClass: { targets: imgBox, className: "active" },
+        scrub: 1,
+        markers: true,
+      },
+    });
+  });
+
+  gsap.utils.toArray(".text-box").forEach(function (textBox) {
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: textBox,
+        start: "50% 80%",
+        end: "100% 0%",
+        toggleClass: { targets: textBox, className: "active" },
+        scrub: 1,
+        // markers: true,
+      },
+    });
+  });
+});
+
+// workExp li hover 시 이미지 등장
 $(function () {
   // sc2 workExp: hover img
   let listBox = document.querySelectorAll(".sc2 ul.workExp li");
@@ -385,6 +415,7 @@ $(function () {
   }
 });
 
+// contact & footer 스크롤에 맞춰 위로 올라오게
 $(function () {
   gsap.to(".contact-footer-wrap", {
     y: 0,

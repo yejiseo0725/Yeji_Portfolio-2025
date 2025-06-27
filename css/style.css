@@ -743,8 +743,6 @@ ul.workList li .img-box a {
   height: 100%;
   border-radius: 60px;
   overflow: hidden;
-
-  border: 2px solid tomato;
 }
 ul.workList.motion li .img-box {
   transform: translate3d(0, 0, 0);
@@ -795,6 +793,7 @@ ul.workList li .text-box a:hover::after {
   width: 100%;
 }
 
+/* txt-year */
 ul.workList li .text-box a em {
   display: inline-block;
   font-style: normal;
@@ -807,12 +806,35 @@ ul.workList li .text-box a em {
   box-sizing: border-box;
   margin-bottom: 2px;
 }
-
+/* txt-title */
 ul.workList li .text-box a p {
   font-weight: 300;
   font-size: 3rem;
   color: var(--font-color-w);
   letter-spacing: 1px;
+}
+
+/* active */
+.img-box {
+  transform: translateY(-70px);
+  transition: all 0.8s ease;
+  opacity: 0;
+}
+.img-box.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.text-box a em,
+.text-box a p {
+  margin: 50px 0;
+  transition: all 0.8s ease;
+  opacity: 0;
+}
+.text-box.active a em,
+.text-box.active a p {
+  margin: 0;
+  opacity: 1;
 }
 
 ul.workExp {
