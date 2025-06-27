@@ -385,6 +385,22 @@ $(function () {
   });
 });
 
+// workExp GSAP
+$(function () {
+  gsap.utils.toArray(".workExp li").forEach(function (item) {
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: item,
+        start: "50% 80%",
+        end: "100% 0%",
+        toggleClass: { targets: item, className: "active" },
+        scrub: 1,
+        markers: true,
+      },
+    });
+  });
+});
+
 // workExp li hover 시 이미지 등장
 $(function () {
   // sc2 workExp: hover img

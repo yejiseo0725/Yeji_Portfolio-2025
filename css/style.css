@@ -876,6 +876,17 @@ ul.workExp li a:hover span {
   opacity: 1;
 }
 
+/* active */
+ul.workExp li {
+  transform: translateY(-70px);
+  transition: all 0.8s ease;
+  opacity: 0;
+}
+ul.workExp li.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 .sc2 .imgBox {
   position: fixed; /* 화면 기준으로 따라다니게 */
   top: 0;
