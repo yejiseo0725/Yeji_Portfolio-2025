@@ -395,7 +395,7 @@ $(function () {
         end: "100% 0%",
         toggleClass: { targets: item, className: "active" },
         scrub: 1,
-        markers: true,
+        // markers: true,
       },
     });
   });
