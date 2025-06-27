@@ -587,7 +587,7 @@ body.light-header header .gnb ul li:last-child a:hover {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  background-color: var(--blue);
+  background-color: var(--main-color);
 
   border: none;
   transform: rotate(-18deg);
