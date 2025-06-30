@@ -163,7 +163,7 @@ function setupImageSlider(sliderEl) {
 }
 
 // 모든 슬라이더 설정
-document.querySelectorAll(".img-slider").forEach(setupImageSlider);
+// document.querySelectorAll(".img-slider").forEach(setupImageSlider);
 
 // $(".accordion ul li .acc-title").on("click", function () {
 //   const li = $(this).closest("li");

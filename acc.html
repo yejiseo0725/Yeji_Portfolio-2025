@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACC</title>
+
+    <style>
+        .accordion ul li {
+            position: relative;
+        }
+
+        .accordion input[type="checkbox"] {
+            display: none;
+        }
+
+        .accordion .acc-title {
+            display: block;
+            cursor: pointer;
+            padding: 30px;
+            font-size: 1.4rem;
+            border-top: 1px solid black;
+        }
+
+        .accordion .acc-desc {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 30px;
+            opacity: 0;
+            /* transition: max-height 0.4s ease, opacity 0.4s ease; */
+            background-color: aqua;
+        }
+
+        /* 펼쳐질 때 */
+        .accordion input:checked~.acc-desc {
+            max-height: 300px;
+            /* 적당한 최대 높이 설정 */
+            opacity: 1;
+            padding: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="accordion">
+        <ul>
+            <li>
+                <input type="checkbox" id="acc1" hidden>
+                <label class="acc-title" for="acc1"><strong>첫 번째 항목</strong><span>+</span></label>
+                <div class="acc-desc">
+                    <p>여기에 상세 설명이 들어갑니다. HTML과 CSS만으로도 펼침 가능!</p>
+                </div>
+            </li>
+
+            <li>
+                <input type="checkbox" id="acc2" hidden>
+                <label class="acc-title" for="acc2"><strong>두 번째 항목</strong><span>+</span></label>
+                <div class="acc-desc">
+                    <p>두 번째 설명입니다.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+</body>
+
+</html>

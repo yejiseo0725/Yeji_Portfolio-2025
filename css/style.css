@@ -490,8 +490,6 @@ body.light-header header .gnb ul li:last-child a:hover {
 }
 
 .accordion {
-  border: 2px solid tomato;
-
   max-width: 900px;
   box-sizing: border-box;
   margin: 80px auto 60px;
@@ -1207,9 +1205,14 @@ footer small {
     width: 98%;
     margin: 0 auto;
   }
+  .contact .inner {
+    padding: 0 4rem;
+    box-sizing: border-box;
+  }
+
   footer .inner {
     width: 100%;
-    padding: 20px 2rem;
+    padding: 20px 4rem;
     box-sizing: border-box;
   }
 }
