@@ -964,9 +964,29 @@ footer small {
   color: var(--font-color-w);
 }
 
-/* ✅ 모든 링크와 버튼은 클릭 가능 */
-a, button, input, select, textarea {
-  cursor: pointer;
+body, 
+html,
+header,
+header *,
+.sc1,
+.sc1 *,
+.sc2,
+.sc2 *,
+.contact,
+.contact *,
+footer,
+footer *,
+a,
+button {
+  pointer-events: auto !important;
+}
+
+/* 애니메이션 요소만 차단 */
+.visual .moon,
+.visual .sparkle,
+.visual .atom,
+.visual .img-slider {
+  pointer-events: none !important;
 }
 
 /* responsive */
