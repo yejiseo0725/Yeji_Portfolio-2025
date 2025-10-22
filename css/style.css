@@ -2,6 +2,7 @@
 * {
   font-family: "Pretendard";
   color: var(--font-color);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
 }
 
 html {
@@ -35,7 +36,8 @@ header {
   left: 0;
   width: 100%;
   z-index: 100;
-  will-change: transfrom, opacity;
+  will-change: transform, opacity;
+  pointer-events: auto;
 }
 header .inner {
   width: 100%;
@@ -109,6 +111,7 @@ body.light-header header .gnb ul li:last-child a:hover {
   box-sizing: border-box;
   background-color: var(--main-color);
   overflow-x: hidden;
+  pointer-events: none;
 }
 .visual .inner {
   display: flex;
@@ -119,6 +122,7 @@ body.light-header header .gnb ul li:last-child a:hover {
   height: 100%;
   padding: 50px 0;
   box-sizing: border-box;
+  pointer-events: none;
 }
 
 .visual h1 {
@@ -189,6 +193,18 @@ body.light-header header .gnb ul li:last-child a:hover {
   transition-delay: 0.3s;
 }
 
+.visual a,
+.visual button {
+  pointer-events: auto !important;
+}
+
+/* SVG 요소들이 클릭을 막지 않도록 */
+.visual .moon,
+.visual .sparkle,
+.visual .atom {
+  pointer-events: none;
+}
+
 .img-slider {
   display: inline-block;
   position: relative;
@@ -200,6 +216,7 @@ body.light-header header .gnb ul li:last-child a:hover {
   box-sizing: border-box;
   overflow: hidden;
   transition: transform 1.5s ease;
+  pointer-events: none;
 }
 
 .slider-inner {
@@ -1092,6 +1109,31 @@ footer small {
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--font-color-w);
+}
+
+/* iOS 터치 이벤트 최적화 */
+a, button, input, select, textarea, [onclick], [role="button"] {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* 애니메이션 중인 요소들 최적화 */
+.visual.animate-in * {
+  will-change: transform, opacity;
+}
+
+/* 스크롤 이후 visual 요소들 클릭 차단 해제 */
+body {
+  touch-action: manipulation; /* iOS 더블탭 줌 방지 */
+}
+
+/* visual 스크롤 후 완전히 숨기기 */
+@media (hover: none) and (pointer: coarse) {
+  /* 모바일/터치 디바이스에만 적용 */
+  .visual {
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 /* responsive */

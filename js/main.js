@@ -1,3 +1,11 @@
+// iOS 터치 이벤트 활성화
+document.addEventListener('touchstart', function() {}, { passive: true });
+
+// iOS Safari에서 스크롤 개선
+if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+  document.body.style.cursor = 'pointer';
+}
+
 $(function () {
   Splitting();
 });
@@ -39,6 +47,8 @@ gsap
       end: "+=1600",
       scrub: true,
       pin: true,
+      pinSpacing: true,
+      anticipatePin: 1,
     },
   })
   .to(
@@ -57,6 +67,9 @@ gsap
       opacity: 0,
       ease: "none",
       duration: 0.1, // 나머지 30% 구간에서 사라짐
+      onComplete: () => {
+        gsap.set(".moon", { pointerEvents: "none" });
+      }
     },
     0.8
   )
@@ -77,6 +90,9 @@ gsap
       opacity: 0,
       ease: "none",
       duration: 0.1,
+      onComplete: () => {
+        gsap.set(".sparkle", { pointerEvents: "none" });
+      }
     },
     0.8
   )
@@ -97,6 +113,9 @@ gsap
       opacity: 0,
       ease: "none",
       duration: 0.1,
+      onComplete: () => {
+        gsap.set(".atom", { pointerEvents: "none" });
+      }
     },
     0.8
   );
