@@ -6,11 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yeji's Portfolio 25'</title>
     <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/style.css">
     <!-- Slick Slider -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-
+    <style>
+        /* 전체 페이지 클릭 활성화 */
+        html, body {
+            pointer-events: auto !important;
+        }
+        
+        * {
+            pointer-events: auto !important;
+        }
+        
+        /* 애니메이션 요소만 클릭 차단 */
+        .moon,
+        .sparkle,
+        .atom,
+        .img-slider,
+        .sc2 .imgBox {
+            pointer-events: none !important;
+        }
+    </style>
 </head>
 
 <body>
