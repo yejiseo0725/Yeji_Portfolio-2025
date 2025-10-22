@@ -1,3 +1,39 @@
+// 🔥 페이지 로드 즉시 실행 - 다른 모든 코드보다 먼저!
+(function() {
+  console.log('🔧 클릭 수정 스크립트 실행');
+  
+  // 즉시 실행
+  function fixClicks() {
+    document.body.style.pointerEvents = 'auto';
+    document.documentElement.style.pointerEvents = 'auto';
+    
+    document.querySelectorAll('*').forEach(el => {
+      const classList = el.classList;
+      if (!classList.contains('moon') && 
+          !classList.contains('sparkle') && 
+          !classList.contains('atom') &&
+          !classList.contains('img-slider')) {
+        el.style.pointerEvents = 'auto';
+      }
+    });
+  }
+  
+  // 즉시 실행
+  fixClicks();
+  
+  // DOM 로드 후에도 실행
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fixClicks);
+  } else {
+    fixClicks();
+  }
+  
+  // 0.5초마다 체크 (다른 스크립트가 덮어쓰는 것 방지)
+  setInterval(fixClicks, 500);
+  
+  console.log('✅ 클릭 수정 완료');
+})();
+
 // iOS 터치 이벤트 활성화
 document.addEventListener('touchstart', function() {}, { passive: true });
 
