@@ -16,10 +16,13 @@ body {
   font-size: 16px;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  touch-action: manipulation;
   background-color: var(--main-color);
   margin: 0;
   padding: 0;
 }
+
+/* ❌ 삭제: body, html, * { pointer-events: auto; } */
 
 .inner {
   box-sizing: border-box;
@@ -37,7 +40,6 @@ header {
   width: 100%;
   z-index: 100;
   will-change: transform, opacity;
-  pointer-events: auto;
 }
 header .inner {
   width: 100%;
@@ -111,7 +113,6 @@ body.light-header header .gnb ul li:last-child a:hover {
   box-sizing: border-box;
   background-color: var(--main-color);
   overflow-x: hidden;
-  pointer-events: none;
 }
 .visual .inner {
   display: flex;
@@ -122,7 +123,6 @@ body.light-header header .gnb ul li:last-child a:hover {
   height: 100%;
   padding: 50px 0;
   box-sizing: border-box;
-  pointer-events: none;
 }
 
 .visual h1 {
@@ -193,22 +193,18 @@ body.light-header header .gnb ul li:last-child a:hover {
   transition-delay: 0.3s;
 }
 
-.visual a,
-.visual button {
-  pointer-events: auto !important;
-}
-
-/* SVG 요소들이 클릭을 막지 않도록 */
+/* ✅ 애니메이션 요소만 클릭 차단 */
 .visual .moon,
 .visual .sparkle,
-.visual .atom {
+.visual .atom,
+.visual .img-slider {
   pointer-events: none;
 }
 
 .img-slider {
   display: inline-block;
   position: relative;
-  width: 200px; /* 원하는 이미지 크기에 맞게 */
+  width: 200px;
   height: 100px;
   object-fit: cover;
   border-radius: 60px;
@@ -216,7 +212,6 @@ body.light-header header .gnb ul li:last-child a:hover {
   box-sizing: border-box;
   overflow: hidden;
   transition: transform 1.5s ease;
-  pointer-events: none;
 }
 
 .slider-inner {
@@ -464,327 +459,185 @@ body.light-header header .gnb ul li:last-child a:hover {
   overflow: hidden;
 }
 .skill-card .skill-card-img {
-  /* border: 2px solid tan; */
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 45%;
-  height: 45%;
+  width: 150px;
+  height: 150px;
+  background-color: var(--font-color-w);
+  border-radius: 50%;
   object-fit: cover;
   box-sizing: border-box;
+  overflow: hidden;
 }
 .skill-card .skill-card-img img {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
 }
 
-.skill-text {
-  margin-top: 40px;
-  padding-bottom: 1rem;
-  box-sizing: border-box;
-}
-.skill-text strong {
-  text-align: center;
+.skillSet strong {
   display: block;
+  margin-top: 20px;
+  text-align: center;
   font-weight: 500;
   font-size: 1.4rem;
-  margin-bottom: 20px;
 }
-.skill-text p {
-  text-align: justify;
+
+.skillSet p {
+  margin-top: 10px;
+  text-align: center;
   font-weight: 300;
-  font-size: 1rem;
-  line-height: 1.6;
-  padding-bottom: 1rem;
+  font-size: 0.8rem;
+  word-break: keep-all;
+  line-height: 1.4;
+}
+
+.white-section {
+  position: relative;
+  background-color: var(--font-color-w);
+  padding: 100px 0;
   box-sizing: border-box;
 }
 
-.slick-arrow,
-.slick-prev,
-.slick-next {
-  display: none !important;
+.white-section .inner {
 }
 
-.accordion {
-  max-width: 900px;
+.sc1 h3 {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 3rem;
+  border-bottom: 3px solid var(--font-color);
+  padding-bottom: 10px;
+  margin-bottom: 30px;
   box-sizing: border-box;
-  margin: 80px auto 60px;
 }
-.accordion ul {
+
+.white-section .accordion {
+  margin-top: 100px;
 }
+
 .accordion ul li {
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--dark-gray);
 }
 
 .accordion ul li .acc-title {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 500;
-  font-size: 1.4rem;
-  letter-spacing: 0.4px;
-  padding: 30px;
-  box-sizing: border-box;
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: 30px 0;
   cursor: pointer;
-  border-top: 1px solid var(--font-color);
 }
 
-.accordion ul li .acc-title strong {
-  position: relative;
-}
-.accordion ul li .acc-title strong::after {
-  content: "";
-  position: absolute;
-  right: -10px;
-  top: 10%;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: var(--font-color);
-  opacity: 0;
-  transform: scale(0);
-  transition: 0.3s ease;
-}
-
-.accordion ul li .acc-title:hover strong::after {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.accordion ul li .acc-title span {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-}
-.accordion ul li .acc-title span img {
-  display: block;
-  width: 100%;
-  height: 100%;
+.accordion ul li:last-child {
+  border-bottom: none;
 }
 
 .accordion ul li .acc-desc {
   display: none;
-  padding: 40px 30px;
-  box-sizing: border-box;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  overflow-x: hidden;
-  max-width: 200%;
-  word-break: break-word;
-}
-.accordion ul li .acc-desc.animate-in {
-  opacity: 1;
-  transform: translateY(0);
-  margin-bottom: 20px;
-}
-
-.accordion ul li .acc-desc .ex-wrap {
-  margin-bottom: 20px;
-}
-.accordion ul li .acc-desc strong {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 500;
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-}
-.accordion ul li .acc-desc strong span {
-  font-weight: 400;
-  color: var(--dark-gray);
+  padding-bottom: 30px;
 }
 
 .accordion ul li .acc-desc p {
   font-weight: 300;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: var(--font-color);
-  padding-bottom: 5px;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
 }
 
-.resume-btn-area {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 0 200px;
+.white-section .btn-wrap {
+  margin-top: 100px;
+  text-align: center;
 }
-.resume-btn-area button {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  background-color: var(--main-color);
-
-  border: none;
-  transform: rotate(-18deg);
-  cursor: pointer;
-  transition: 0.2s;
-}
-.resume-btn-area button:hover {
-  transform: rotate(-18deg) scale(1.1);
-  box-shadow: 5px 5px 12px rgba(0, 20, 41, 0.4);
-}
-
-.resume-btn-area button a {
-  font-weight: 600;
-  font-size: 1.5rem;
-  color: var(--font-color-w);
-  overflow: hidden;
-}
-
-/* Splitting JS */
-.resume-btn-area button a .char {
-  position: relative;
+.white-section .btn-wrap a {
   display: inline-block;
-  color: transparent;
-  /* color: var(--font-color-w); */
-  overflow: hidden;
+  padding: 20px 40px;
+  border: 1px solid var(--font-color);
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--font-color);
+  transition: 0.3s;
 }
-.resume-btn-area button a .char::before,
-.resume-btn-area button a .char::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 1;
+.white-section .btn-wrap a:hover {
+  background-color: var(--font-color);
   color: var(--font-color-w);
-  content: attr(data-char);
-  transition: transform 0.35s;
-  transition-delay: calc(30ms * var(--char-index));
-}
-.resume-btn-area button a .char::before {
-  transform: translateY(100%);
-}
-.resume-btn-area button:hover .char::before {
-  transform: translateY(0);
-  opacity: 1;
-  color: var(--font-color-w);
-}
-.resume-btn-area button:hover .char::after {
-  transform: translateY(-100%);
 }
 
 /* section 2 */
 .sc2 {
   position: relative;
+  padding: 100px 0 0;
   box-sizing: border-box;
   background-color: var(--font-color-w);
-  padding: 200px 0 100px;
 }
 .sc2 .inner {
+  padding-bottom: 100px;
 }
 
-.pj-cat {
-  padding: 20px 0;
-  box-sizing: border-box;
-  border-bottom: 1px solid var(--main-color);
-  margin-bottom: 80px;
+.sc2 .pj-cat {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--font-color);
+  padding-bottom: 10px;
+  margin-bottom: 150px;
 }
-.pj-cat strong {
+
+.sc2 .pj-cat strong {
+  display: block;
   font-weight: 500;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  color: var(--main-color);
+  font-size: 1rem;
+  color: var(--font-color);
 }
 
 .h3-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
-  margin: 0 auto 100px;
+  margin-bottom: 150px;
 }
 .h3-wrap h3 {
-  font-weight: 500;
-  font-size: 8rem;
-  line-height: 1;
-  letter-spacing: 3px;
-  color: var(--font-color-w);
-  text-transform: uppercase;
-  text-align: center;
+  position: relative;
+  display: flex;
+  font-weight: 700;
+  font-size: 7rem;
+  margin: 0 80px;
+  box-sizing: border-box;
 }
 .h3-wrap h3 span {
-  display: block;
-  color: var(--font-color-w);
-  line-height: 1.1;
+  white-space: nowrap;
+  color: var(--font-color);
 }
 
 ul.workList {
-  margin-bottom: 80px;
 }
+
 ul.workList li {
   display: flex;
-  align-items: flex-end;
-  width: 100%;
-  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 150px;
 }
-ul.workList li.li-even {
-  text-align: end;
-}
-
-ul.workList li a {
-  display: inline-block;
-  color: var(--font-color-w);
-}
-ul.workList li a.workImg::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  object-fit: cover;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background: url(../images/asset/sparkle.svg) no-repeat center/150px;
-  z-index: 1;
-  animation: spin 1.5s infinite linear;
-  transition: 0.3s;
-}
-
-/* li hover */
-ul.workList li a.workImg:hover img {
-  filter: brightness(40%);
-}
-ul.workList li a.workImg:hover::after {
-  width: 150px;
-  height: 150px;
-}
-
-@keyframes spin {
-  0% {
-    transform: translate(-50%, -50%) rotate(0);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
+ul.workList li:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
 ul.workList li .img-box {
-  position: relative;
-  width: 65%;
-  height: 600px;
-  object-fit: cover;
-  padding: 40px;
+  width: 55%;
+  height: 550px;
+  border-radius: 40px;
   box-sizing: border-box;
-}
-ul.workList li .img-box a {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-  border-radius: 60px;
   overflow: hidden;
 }
-ul.workList.motion li .img-box {
-  transform: translate3d(0, 0, 0);
-}
-ul.workList.motion li .img-box a {
-  animation: picAni 1.3s;
-}
-@keyframes picAni {
-  0% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0%;
-    transform: translate3d(0, 70px, 0);
-  }
+
+ul.workList li .img-box a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 ul.workList li .img-box a img {
@@ -915,7 +768,7 @@ ul.workExp li.active {
 }
 
 .sc2 .imgBox {
-  position: fixed; /* 화면 기준으로 따라다니게 */
+  position: fixed;
   top: 0;
   left: 0;
   width: 400px;
@@ -1111,29 +964,9 @@ footer small {
   color: var(--font-color-w);
 }
 
-/* iOS 터치 이벤트 최적화 */
-a, button, input, select, textarea, [onclick], [role="button"] {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+/* ✅ 모든 링크와 버튼은 클릭 가능 */
+a, button, input, select, textarea {
   cursor: pointer;
-  pointer-events: auto;
-}
-
-/* 애니메이션 중인 요소들 최적화 */
-.visual.animate-in * {
-  will-change: transform, opacity;
-}
-
-/* 스크롤 이후 visual 요소들 클릭 차단 해제 */
-body {
-  touch-action: manipulation; /* iOS 더블탭 줌 방지 */
-}
-
-/* visual 스크롤 후 완전히 숨기기 */
-@media (hover: none) and (pointer: coarse) {
-  /* 모바일/터치 디바이스에만 적용 */
-  .visual {
-    -webkit-overflow-scrolling: touch;
-  }
 }
 
 /* responsive */
