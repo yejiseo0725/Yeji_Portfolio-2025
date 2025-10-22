@@ -46,9 +46,9 @@ gsap
       start: "top top",
       end: "+=1600",
       scrub: true,
-      pin: true,
-      pinSpacing: true,
-      anticipatePin: 1,
+      pin: false,
+      // pinSpacing: true,
+      // anticipatePin: 1,
     },
   })
   .to(
