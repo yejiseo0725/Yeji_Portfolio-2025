@@ -22,8 +22,6 @@ body {
   padding: 0;
 }
 
-/* ❌ 삭제: body, html, * { pointer-events: auto; } */
-
 .inner {
   box-sizing: border-box;
   max-width: 1400px;
@@ -193,7 +191,7 @@ body.light-header header .gnb ul li:last-child a:hover {
   transition-delay: 0.3s;
 }
 
-.vi.moon,sual 
+.visual .moon 
 .visual .sparkle,
 .visual .atom {
   pointer-events: none;
