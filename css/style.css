@@ -193,11 +193,9 @@ body.light-header header .gnb ul li:last-child a:hover {
   transition-delay: 0.3s;
 }
 
-/* ✅ 애니메이션 요소만 클릭 차단 */
-.visual .moon,
+.vi.moon,sual 
 .visual .sparkle,
-.visual .atom,
-.visual .img-slider {
+.visual .atom {
   pointer-events: none;
 }
 
@@ -774,7 +772,6 @@ ul.workExp li.active {
   width: 400px;
   height: auto;
   z-index: 99;
-  pointer-events: none;
   transform: scale(0);
   opacity: 0;
 }
@@ -979,14 +976,6 @@ footer *,
 a,
 button {
   pointer-events: auto !important;
-}
-
-/* 애니메이션 요소만 차단 */
-.visual .moon,
-.visual .sparkle,
-.visual .atom,
-.visual .img-slider {
-  pointer-events: none !important;
 }
 
 /* responsive */
