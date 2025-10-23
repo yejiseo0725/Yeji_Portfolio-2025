@@ -959,23 +959,6 @@ footer small {
   color: var(--font-color-w);
 }
 
-body, 
-html,
-header,
-header *,
-.sc1,
-.sc1 *,
-.sc2,
-.sc2 *,
-.contact,
-.contact *,
-footer,
-footer *,
-a,
-button {
-  pointer-events: auto !important;
-}
-
 /* responsive */
 @media (max-width: 1300px) {
   .inner {
