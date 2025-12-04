@@ -1020,12 +1020,12 @@ footer small {
 
 @media (max-width: 1000px) {
   .visual {
-    width: 1000px;
-    max-width: 1000px;
+    width: 100%;
+    max-width: 100%;
   }
   .visual .inner {
-    width: 1000px;
-    max-width: 1000px;
+    width: 100%;
+    max-width: 100%;
   }
 
   header .inner {
