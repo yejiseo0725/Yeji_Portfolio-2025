@@ -1,146 +1,104 @@
-html,
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-code,
-img,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-legend,
-caption {
-  margin: 0;
-  padding: 0;
-  border: 0;
+/* ============================================
+   Modern CSS Reset - Custom Starter
+   Base: Josh Comeau and Andy Bell
+   ============================================ */
+
+/* 1. Box model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Mobile font size adjustment */
 html {
-  height: 100%;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
+/* 4. Modern animation support */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+/* 5. Body defaults */
 body {
-  min-height: 100%;
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
+/* 6. Lists defaults */
 ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-
-ol,
-ul {
+ol {
   list-style: none;
+  padding-left: 0;
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+/* 7. Headings & Interactive elements */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  line-height: 1.1;
 }
-a {
-  text-decoration: none;
+
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* 8. Text overflow prevention */
+p,
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* 9. Media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 10. Form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* 11. Links without class */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* 12. Anchor scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* 13. Root stacking context */
+#root,
+#__next {
+  isolation: isolate;
 }
