@@ -23,7 +23,6 @@ body {
 }
 
 .inner {
-  box-sizing: border-box;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -178,7 +177,9 @@ body.light-header header .gnb ul li:last-child a:hover {
 .visual h1 span.title em {
   transform: scale(0.5) skewX(-20deg);
   opacity: 0;
-  transition: transform 1s ease, opacity 1s ease;
+  transition:
+    transform 1s ease,
+    opacity 1s ease;
   transform-origin: center;
 }
 .visual.animate-in h1 span.title em {
@@ -191,7 +192,7 @@ body.light-header header .gnb ul li:last-child a:hover {
   transition-delay: 0.3s;
 }
 
-.visual .moon 
+.visual .moon,
 .visual .sparkle,
 .visual .atom {
   pointer-events: none;
