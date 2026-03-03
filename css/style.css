@@ -773,6 +773,7 @@ ul.workExp li.active {
   z-index: 99;
   transform: scale(0);
   opacity: 0;
+  pointer-events: none;
 }
 .sc2 .imgBox img {
   display: block;
@@ -783,6 +784,12 @@ ul.workExp li.active {
 /* 이 구간에서만 img hover scroll 없애기 */
 .wrap.on {
   overflow: hidden;
+}
+
+@media (max-width: 500px) {
+  .sc2 .imgBox {
+    display: none;
+  }
 }
 
 .marquee-wrap {
