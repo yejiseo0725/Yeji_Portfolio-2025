@@ -1,3 +1,11 @@
+// iOS 터치 이벤트 활성화
+document.addEventListener("touchstart", function () {}, { passive: true });
+
+// iOS Safari에서 스크롤 개선
+if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+  document.body.style.cursor = "pointer";
+}
+
 $(function () {
   Splitting();
 });
@@ -38,7 +46,9 @@ gsap
       start: "top top",
       end: "+=1600",
       scrub: true,
-      pin: true,
+      pin: false,
+      // pinSpacing: true,
+      // anticipatePin: 1,
     },
   })
   .to(
@@ -49,7 +59,7 @@ gsap
       ease: "none",
       duration: 0.9, // 전체 타임라인 중 70% 구간
     },
-    0
+    0,
   )
   .to(
     ".moon",
@@ -57,8 +67,11 @@ gsap
       opacity: 0,
       ease: "none",
       duration: 0.1, // 나머지 30% 구간에서 사라짐
+      onComplete: () => {
+        gsap.set(".moon", { pointerEvents: "none" });
+      },
     },
-    0.8
+    0.8,
   )
 
   .to(
@@ -69,7 +82,7 @@ gsap
       ease: "none",
       duration: 0.9,
     },
-    0
+    0,
   )
   .to(
     ".sparkle",
@@ -77,8 +90,11 @@ gsap
       opacity: 0,
       ease: "none",
       duration: 0.1,
+      onComplete: () => {
+        gsap.set(".sparkle", { pointerEvents: "none" });
+      },
     },
-    0.8
+    0.8,
   )
 
   .to(
@@ -89,7 +105,7 @@ gsap
       ease: "none",
       duration: 0.9,
     },
-    0
+    0,
   )
   .to(
     ".atom",
@@ -97,8 +113,11 @@ gsap
       opacity: 0,
       ease: "none",
       duration: 0.1,
+      onComplete: () => {
+        gsap.set(".atom", { pointerEvents: "none" });
+      },
     },
-    0.8
+    0.8,
   );
 
 // 스크롤에 따라 이동하는 visual svg 애니메이션
@@ -165,29 +184,29 @@ function setupImageSlider(sliderEl) {
 // 모든 슬라이더 설정
 // document.querySelectorAll(".img-slider").forEach(setupImageSlider);
 
-// $(".accordion ul li .acc-title").on("click", function () {
-//   const li = $(this).closest("li");
-//   const desc = $(this).next(".acc-desc");
+$(".accordion ul li .acc-title").on("click", function () {
+  const li = $(this).closest("li");
+  const desc = $(this).next(".acc-desc");
 
-//   if (desc.is(":visible")) {
-//     // 닫힐 때
-//     desc.removeClass("animate-in");
-//     desc.removeClass("open");
-//     desc.slideUp(200, () => {
-//       ScrollTrigger.refresh();
-//     });
-//   } else {
-//     // 열릴 때
-//     desc.stop(true, true).slideDown(200, function () {
-//       desc.addClass("animate-in");
-//       li.addClass("open");
+  if (desc.is(":visible")) {
+    // 닫힐 때
+    desc.removeClass("animate-in");
+    desc.removeClass("open");
+    desc.slideUp(200, () => {
+      ScrollTrigger.refresh();
+    });
+  } else {
+    // 열릴 때
+    desc.stop(true, true).slideDown(200, function () {
+      desc.addClass("animate-in");
+      li.addClass("open");
 
-//       setTimeout(() => {
-//         ScrollTrigger.refresh();
-//       }, 100);
-//     });
-//   }
-// });
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 100);
+    });
+  }
+});
 
 // header 천천히 위 -> 아래 등장
 $(function () {
@@ -259,7 +278,7 @@ gsap.fromTo(
       // markers: true,
       scrub: 3,
     },
-  }
+  },
 );
 
 $(function () {
@@ -304,7 +323,7 @@ $(function () {
         ease: "none",
         duration: 5,
       },
-      0
+      0,
     )
     .to(
       ".pj-cat",
@@ -314,7 +333,7 @@ $(function () {
         ease: "none",
         duration: 5,
       },
-      0
+      0,
     )
     .to(
       ".pj-cat strong",
@@ -323,7 +342,7 @@ $(function () {
         ease: "none",
         duration: 5,
       },
-      0
+      0,
     )
     .to(
       ".h3-wrap h3 span",
@@ -332,7 +351,7 @@ $(function () {
         ease: "none",
         duration: 5,
       },
-      0
+      0,
     )
 
     .fromTo(
@@ -345,7 +364,7 @@ $(function () {
         ease: "none",
         duration: 5,
       },
-      0
+      0,
     )
     .fromTo(
       ".sc2 h3 .b",
@@ -357,7 +376,7 @@ $(function () {
         ease: "none",
         duration: 5,
       },
-      0
+      0,
     );
 });
 
@@ -417,7 +436,6 @@ $(function () {
     listBox[i].addEventListener("mouseover", () => {
       const src = `./images/img${i + 1}.jpg`;
       img.src = src;
-      console.log("hover img src:", src); // 로그 확인
 
       gsap.set(imgBox, { scale: 0, opacity: 0 });
       gsap.to(imgBox, { scale: 1, opacity: 1, duration: 0.3 });
